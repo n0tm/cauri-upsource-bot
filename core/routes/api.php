@@ -21,7 +21,3 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('/upsource', function (Request $request) {
     \Illuminate\Support\Facades\Log::info($request);
 });
-
-Route::post('test-route', function (Request $request) {
-    return 'hello world';
-});
