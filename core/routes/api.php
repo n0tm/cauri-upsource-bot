@@ -25,3 +25,7 @@ Route::post('/upsource', function (Request $request) {
 Route::post('test-route', function (Request $request) {
     return 'hello world';
 });
+
+Route::post('add new revision', function () {
+    return 'revision';
+});
