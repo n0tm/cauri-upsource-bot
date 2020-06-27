@@ -41,6 +41,21 @@ $app->singleton(
     App\Exceptions\Handler::class
 );
 
+$app->bind(
+    \App\Domain\Contract\Processor::class,
+    \App\Domain\Implementation\Processor::class
+);
+
+$app->bind(
+    \App\Http\Request\Upsource\ConverterInterface::class,
+    \App\Http\Request\Upsource\Converter::class
+);
+
+$app->bind(
+    \App\Domain\Contract\Action\Factory::class,
+    \App\Domain\Implementation\Action\Factory::class
+);
+
 /*
 |--------------------------------------------------------------------------
 | Return The Application

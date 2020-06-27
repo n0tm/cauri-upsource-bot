@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Request\Upsource;
+namespace App\Http\Request\Upsource\Model;
 
 interface RequestInterface
 {
