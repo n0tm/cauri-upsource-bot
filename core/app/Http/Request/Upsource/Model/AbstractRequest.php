@@ -47,11 +47,6 @@ abstract class AbstractRequest implements RequestInterface
         return $this->projectId;
     }
 
-    public function getDataType(): string
-    {
-        return $this->dataType;
-    }
-
     public function getData(): array
     {
         return $this->data;
