@@ -4760,7 +4760,7 @@ class ComposerStaticInit8d814a4ea1723e322e3e1a8c4707278c
         'Tests\\CreatesApplication' => __DIR__ . '/../..' . '/tests/CreatesApplication.php',
         'Tests\\Feature\\ExampleTest' => __DIR__ . '/../..' . '/tests/Feature/ExampleTest.php',
         'Tests\\TestCase' => __DIR__ . '/../..' . '/tests/TestCase.php',
-        'Tests\\Unit\\Controller\\Upsource\\UpsourceWebhookHandler' => __DIR__ . '/../..' . '/tests/Unit/Controller/Upsource/UpsourceWebhookHandler.php',
+        'Tests\\Unit\\Controller\\Upsource\\UpsourceWebhookHandler' => __DIR__ . '/../..',
         'Text_Template' => __DIR__ . '/..' . '/phpunit/php-text-template/src/Template.php',
         'TheSeer\\Tokenizer\\Exception' => __DIR__ . '/..' . '/theseer/tokenizer/src/Exception.php',
         'TheSeer\\Tokenizer\\NamespaceUri' => __DIR__ . '/..' . '/theseer/tokenizer/src/NamespaceUri.php',

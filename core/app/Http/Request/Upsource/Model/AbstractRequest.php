@@ -20,21 +20,15 @@ abstract class AbstractRequest implements RequestInterface
     private $projectId;
 
     /**
-     * @var string
-     */
-    private $dataType;
-
-    /**
      * @var array
      */
     private $data;
 
-    public function __construct(int $majorVersion, int $minorVersion, string $projectId, string $dataType, array $data)
+    public function __construct(int $majorVersion, int $minorVersion, string $projectId, array $data)
     {
         $this->majorVersion = $majorVersion;
         $this->minorVersion = $minorVersion;
         $this->projectId    = $projectId;
-        $this->dataType     = $dataType;
         $this->data         = $data;
     }
 

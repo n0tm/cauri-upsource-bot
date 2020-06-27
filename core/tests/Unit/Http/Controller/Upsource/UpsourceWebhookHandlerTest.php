@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Unit\Controller\Upsource;
+namespace Tests\Unit\Http\Controller\Upsource;
 
 use App\Domain\Contract;
 use App\Domain\Implementation;
@@ -9,7 +9,7 @@ use App\Http\Request;
 use PHPUnit\Framework\MockObject\MockObject;
 use Tests\TestCase;
 
-class UpsourceWebhookHandler extends TestCase
+class UpsourceWebhookHandlerTest extends TestCase
 {
     /**
      * @var Contract\Processor|MockObject

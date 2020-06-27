@@ -8,9 +8,8 @@ class Factory
         int $majorVersion,
         int $minorVersion,
         string $projectId,
-        string $dataType,
         array $data
     ): NewReview {
-        return new NewReview($majorVersion, $minorVersion, $projectId, $dataType, $data);
+        return new NewReview($majorVersion, $minorVersion, $projectId, $data);
     }
 }
