@@ -2,36 +2,30 @@
 
 namespace App\Domain\Implementation\Action;
 
+use App\Domain\Contract;
 use Illuminate\Support\Facades\Log;
 
-class NewReview extends \App\Domain\Contract\Action\AbstractAction
+class NewReview implements Contract\Action\Base
 {
-    private const TYPE = 'new review';
-
     /**
      * @var string
      */
-    private $id;
+    private $reviewId;
 
     /**
      * @var string
      */
     private $branch;
 
-    public function __construct(string $id, string $branch)
+    public function __construct(string $reviewId, string $branch)
     {
-        parent::__construct();
-        $this->id     = $id;
-        $this->branch = $branch;
+        $this->reviewId = $reviewId;
+        $this->branch   = $branch;
     }
 
     public function process(): void
     {
-        Log::info("New Review created!\nID: {$this->id}\nBranch: {$this->branch}");
-    }
-
-    public function getType(): string
-    {
-        return self::TYPE;
+        // @todo: Добавить обработку
+        Log::info("New Review created!\nID: {$this->reviewId}\nBranch: {$this->branch}");
     }
 }

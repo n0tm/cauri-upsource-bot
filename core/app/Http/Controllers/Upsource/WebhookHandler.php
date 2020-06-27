@@ -33,15 +33,17 @@ class WebhookHandler extends Controller
         $convertedRequest = $this->requestConverter->convert($request);
         $action = $this->getActionByRequest($convertedRequest);
 
-        Log::info("Starting processing \"{$action->getType()}\" action with id:{$action->getId()}");
+        $actionId   = uniqid('action-');
+        $actionType = get_class($action);
+        Log::info("Starting processing \"{$actionType}\" action with id:{$actionId}");
         try {
             $action->process();
         } catch (\Exception $exception) {
-            Log::critical("Error occurred, during action processing, id:{$action->getId()}");
+            Log::critical("Error occurred, during \"{$actionType}\" action processing, id:{$actionId}\n[Error Message] {$exception->getMessage()}");
         }
     }
 
-    private function getActionByRequest(UpsourceRequest\Model\RequestInterface $request): Contract\Action\AbstractAction
+    private function getActionByRequest(UpsourceRequest\Model\RequestInterface $request): Contract\Action\Base
     {
         switch (true) {
             case $request instanceof UpsourceRequest\Model\NewReview:
