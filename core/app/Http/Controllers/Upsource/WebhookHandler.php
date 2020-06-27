@@ -6,14 +6,10 @@ use App\Domain\Contract;
 use App\Http\Controllers\Controller;
 use App\Http\Request\Upsource as UpsourceRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class WebhookHandler extends Controller
 {
-    /**
-     * @var Contract\Processor
-     */
-    private $actionProcessor;
-
     /**
      * @var UpsourceRequest\ConverterInterface
      */
@@ -25,20 +21,24 @@ class WebhookHandler extends Controller
     private $actionFactory;
 
     public function __construct(
-        Contract\Processor $actionProcessor,
         UpsourceRequest\ConverterInterface $requestConverter,
         Contract\Action\Factory $actionFactory
     ) {
-        $this->actionProcessor  = $actionProcessor;
         $this->requestConverter = $requestConverter;
-        $this->actionFactory = $actionFactory;
+        $this->actionFactory    = $actionFactory;
     }
 
     public function handle(Request $request): void
     {
         $convertedRequest = $this->requestConverter->convert($request);
         $action = $this->getActionByRequest($convertedRequest);
-        $this->actionProcessor->process($action);
+
+        Log::info("Starting processing \"{$action->getType()}\" action with id:{$action->getId()}");
+        try {
+            $action->process();
+        } catch (\Exception $exception) {
+            Log::critical("Error occurred, during action processing, id:{$action->getId()}");
+        }
     }
 
     private function getActionByRequest(UpsourceRequest\Model\RequestInterface $request): Contract\Action\AbstractAction

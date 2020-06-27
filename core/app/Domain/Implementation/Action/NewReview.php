@@ -25,7 +25,7 @@ class NewReview extends \App\Domain\Contract\Action\AbstractAction
         $this->branch = $branch;
     }
 
-    public function handle(): void
+    public function process(): void
     {
         Log::info("New Review created!\nID: {$this->id}\nBranch: {$this->branch}");
     }

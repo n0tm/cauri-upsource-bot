@@ -12,11 +12,6 @@ use Tests\TestCase;
 class UpsourceWebhookHandlerTest extends TestCase
 {
     /**
-     * @var Contract\Processor|MockObject
-     */
-    private $actionProcessor;
-
-    /**
      * @var Request\Upsource\ConverterInterface|MockObject
      */
     private $requestConverter;
@@ -30,11 +25,9 @@ class UpsourceWebhookHandlerTest extends TestCase
     {
         parent::setUp();
 
-        $this->actionProcessor  = $this->createMock(Contract\Processor::class);
         $this->requestConverter = $this->createMock(Request\Upsource\ConverterInterface::class);
         $this->actionFactory    = $this->createMock(Contract\Action\Factory::class);
 
-        $this->app->instance(Contract\Processor::class, $this->actionProcessor);
         $this->app->instance(Contract\Action\Factory::class, $this->actionFactory);
         $this->app->instance(Request\Upsource\ConverterInterface::class, $this->requestConverter);
     }
@@ -75,9 +68,8 @@ class UpsourceWebhookHandlerTest extends TestCase
             ->with($newReviewId, $newReviewBranch)
             ->willReturn($newReviewAction);
 
-        $this->actionProcessor->expects($this->once())
-            ->method('process')
-            ->with($newReviewAction);
+        $newReviewAction->expects($this->once())
+            ->method('process');
 
         $this->post('/api/upsource', []);
     }
