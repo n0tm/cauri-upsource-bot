@@ -47,7 +47,9 @@ class WebhookHandler extends Controller
     {
         switch (true) {
             case $request instanceof UpsourceRequest\Model\ReviewCreated:
-                return $this->actionFactory->createNewReview($request->getReviewId(), $request->getBranch());
+                return $this->actionFactory->createReviewCreated($request->getReviewId(), $request->getBranch());
+            case $request instanceof UpsourceRequest\Model\ReviewLabelChanged:
+                return $this->actionFactory->createReviewLabelChanged($request->getReviewId(), $request->getLabelId(), $request->isWasAdded());
             default:
                 throw new Exception\UnknownRequest("Unknown action for provided request");
         }

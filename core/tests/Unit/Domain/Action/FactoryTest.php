@@ -25,7 +25,7 @@ class FactoryTest extends \Tests\TestCase
         $branch = '::branch::';
 
         $expectedNewReviewAction = new ReviewCreated($id, $branch);
-        $actualNewReviewAction   = $this->factory->createNewReview($id, $branch);
+        $actualNewReviewAction   = $this->factory->createReviewCreated($id, $branch);
 
         $this->assertEquals($expectedNewReviewAction, $actualNewReviewAction);
     }
