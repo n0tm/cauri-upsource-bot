@@ -5,7 +5,7 @@ namespace Tests\Unit\Http\Request\Upsource\Model;
 use App\Http\Request\Upsource\Model\AbstractRequest;
 use App\Http\Request\Upsource\Model\ReviewCreated;
 
-class ReviewCreatedTest extends AbstractRequestTest
+class ReviewCreatedTest extends AbstractReviewTest
 {
     public function testGetBranch(): void
     {
@@ -18,19 +18,6 @@ class ReviewCreatedTest extends AbstractRequestTest
         );
 
         $this->assertSame($branch, $request->getBranch());
-    }
-
-    public function testGetReviewId(): void
-    {
-        $reviewId = '::review id::';
-        $request = $this->getRequest(
-            self::TEST_MAJOR_VERSION,
-            self::TEST_MINOR_VERSION,
-            self::TEST_PROJECT_ID,
-            ['base' => ['reviewId' => $reviewId]]
-        );
-
-        $this->assertSame($reviewId, $request->getReviewId());
     }
 
     /**
