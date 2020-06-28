@@ -46,7 +46,7 @@ class WebhookHandler extends Controller
     private function getActionByRequest(UpsourceRequest\Model\RequestInterface $request): Contract\Action\Base
     {
         switch (true) {
-            case $request instanceof UpsourceRequest\Model\NewReview:
+            case $request instanceof UpsourceRequest\Model\ReviewCreated:
                 return $this->actionFactory->createNewReview($request->getReviewId(), $request->getBranch());
             default:
                 throw new Exception\UnknownRequest("Unknown action for provided request");

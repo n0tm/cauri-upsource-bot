@@ -32,13 +32,13 @@ class ConverterTest extends TestCase
 
     public function testConvertWhenDataTypeIsNewReview(): void
     {
-        $this->request->dataType     = Upsource\ConverterInterface::DATA_TYPE_NEW_REVIEW;
+        $this->request->dataType     = Upsource\ConverterInterface::DATA_TYPE_REVIEW_CREATED;
         $this->request->majorVersion = $this->faker->randomDigit;
         $this->request->minorVersion = $this->faker->randomDigit;
         $this->request->projectId    = '::project id::';
         $this->request->data         = $this->faker->randomElements();
 
-        $expectedNewReviewRequest = Upsource\Model\Factory::createNewReview(
+        $expectedNewReviewRequest = Upsource\Model\Factory::createReviewCreated(
             $this->request->majorVersion,
             $this->request->minorVersion,
             $this->request->projectId,

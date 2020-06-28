@@ -3,7 +3,7 @@
 namespace Tests\Unit\Http\Request\Upsource\Model;
 
 use App\Http\Request\Upsource\Model\AbstractRequest;
-use App\Http\Request\Upsource\Model\NewReview;
+use App\Http\Request\Upsource\Model\ReviewCreated;
 
 class NewReviewTest extends AbstractRequestTest
 {
@@ -38,10 +38,10 @@ class NewReviewTest extends AbstractRequestTest
      * @param int $minorVersion
      * @param string $projectId
      * @param array $data
-     * @return NewReview
+     * @return ReviewCreated
      */
     protected function getRequest(int $majorVersion, int $minorVersion, string $projectId, array $data): AbstractRequest
     {
-        return new NewReview($majorVersion, $minorVersion, $projectId, $data);
+        return new ReviewCreated($majorVersion, $minorVersion, $projectId, $data);
     }
 }

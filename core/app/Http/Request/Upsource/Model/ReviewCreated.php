@@ -2,7 +2,7 @@
 
 namespace App\Http\Request\Upsource\Model;
 
-class NewReview extends AbstractReviewRequest
+class ReviewCreated extends AbstractReviewRequest
 {
     public function getBranch(): string
     {

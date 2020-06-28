@@ -47,7 +47,7 @@ class UpsourceWebhookHandlerTest extends TestCase
 
     public function testHandleWhenNewReviewAction(): void
     {
-        $newReviewRequest = $this->createMock(Request\Upsource\Model\NewReview::class);
+        $newReviewRequest = $this->createMock(Request\Upsource\Model\ReviewCreated::class);
         $newReviewId      = '::id::';
         $newReviewBranch  = '::branch::';
 

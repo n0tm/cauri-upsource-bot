@@ -22,8 +22,8 @@ class Converter implements ConverterInterface
         $data         = $request->data;
 
         switch ($dataType) {
-            case self::DATA_TYPE_NEW_REVIEW:
-                return Model\Factory::createNewReview($majorVersion, $minorVersion, $projectId, $data);
+            case self::DATA_TYPE_REVIEW_CREATED:
+                return Model\Factory::createReviewCreated($majorVersion, $minorVersion, $projectId, $data);
             default:
                 throw new UnknownRequest("Request with dataType \"{$dataType}\" not found");
         }

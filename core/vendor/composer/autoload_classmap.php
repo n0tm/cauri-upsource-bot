@@ -33,7 +33,7 @@ return array(
     'App\\Http\\Request\\Upsource\\ConverterInterface' => $baseDir . '/app/Http/Request/Upsource/ConverterInterface.php',
     'App\\Http\\Request\\Upsource\\Model\\AbstractRequest' => $baseDir . '/app/Http/Request/Upsource/Model/AbstractRequest.php',
     'App\\Http\\Request\\Upsource\\Model\\Factory' => $baseDir . '/app/Http/Request/Upsource/Model/Factory.php',
-    'App\\Http\\Request\\Upsource\\Model\\NewReview' => $baseDir . '/app/Http/Request/Upsource/Model/NewReview.php',
+    'App\\Http\\Request\\Upsource\\Model\\ReviewCreated' => $baseDir . '/app/Http/Request/Upsource/Model/NewReview.php',
     'App\\Http\\Request\\Upsource\\Model\\RequestInterface' => $baseDir . '/app/Http/Request/Upsource/Model/RequestInterface.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',

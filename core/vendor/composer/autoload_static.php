@@ -502,7 +502,7 @@ class ComposerStaticInit8d814a4ea1723e322e3e1a8c4707278c
         'App\\Http\\Request\\Upsource\\ConverterInterface' => __DIR__ . '/../..' . '/app/Http/Request/Upsource/ConverterInterface.php',
         'App\\Http\\Request\\Upsource\\Model\\AbstractRequest' => __DIR__ . '/../..' . '/app/Http/Request/Upsource/Model/AbstractRequest.php',
         'App\\Http\\Request\\Upsource\\Model\\Factory' => __DIR__ . '/../..' . '/app/Http/Request/Upsource/Model/Factory.php',
-        'App\\Http\\Request\\Upsource\\Model\\NewReview' => __DIR__ . '/../..' . '/app/Http/Request/Upsource/Model/NewReview.php',
+        'App\\Http\\Request\\Upsource\\Model\\ReviewCreated' => __DIR__ . '/../..' . '/app/Http/Request/Upsource/Model/NewReview.php',
         'App\\Http\\Request\\Upsource\\Model\\RequestInterface' => __DIR__ . '/../..' . '/app/Http/Request/Upsource/Model/RequestInterface.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
