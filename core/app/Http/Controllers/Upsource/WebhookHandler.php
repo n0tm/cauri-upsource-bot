@@ -6,6 +6,7 @@ use App\Domain\Contract;
 use App\Http\Controllers\Controller;
 use App\Http\Request\Upsource;
 use Illuminate\Http\Request;
+use Telegram\Bot\Api;
 
 class WebhookHandler extends Controller
 {
@@ -27,7 +28,7 @@ class WebhookHandler extends Controller
         $this->actionProcessor  = $actionProcessor;
     }
 
-    public function handle(Request $request): void
+    public function handle(Request $request)
     {
         $convertedRequest = $this->requestConverter->convert($request);
         $this->actionProcessor->process($convertedRequest);

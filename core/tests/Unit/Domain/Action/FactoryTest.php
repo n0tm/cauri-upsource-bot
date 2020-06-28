@@ -5,6 +5,7 @@ namespace Tests\Unit\Domain\Action;
 use App\Domain\Implementation\Action\Factory;
 use App\Domain\Implementation\Action\ReviewCreated;
 use App\Domain\Implementation\Action\ReviewLabelChanged;
+use Telegram\Bot\Api;
 
 class FactoryTest extends \Tests\TestCase
 {
