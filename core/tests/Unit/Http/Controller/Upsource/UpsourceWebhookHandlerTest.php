@@ -45,30 +45,63 @@ class UpsourceWebhookHandlerTest extends TestCase
         $this->post('/api/upsource', []);
     }
 
-    public function testHandleWhenNewReviewAction(): void
+    public function testHandleWhenReviewCreatedAction(): void
     {
-        $newReviewRequest = $this->createMock(Request\Upsource\Model\ReviewCreated::class);
-        $newReviewId      = '::id::';
-        $newReviewBranch  = '::branch::';
+        $reviewCreatedRequest = $this->createMock(Request\Upsource\Model\ReviewCreated::class);
+        $reviewCreatedId      = '::id::';
+        $reviewCreatedBranch  = '::branch::';
 
-        $newReviewRequest->expects($this->once())
+        $reviewCreatedRequest->expects($this->once())
             ->method('getReviewId')
-            ->willReturn($newReviewId);
-        $newReviewRequest->expects($this->once())
+            ->willReturn($reviewCreatedId);
+        $reviewCreatedRequest->expects($this->once())
             ->method('getBranch')
-            ->willReturn($newReviewBranch);
+            ->willReturn($reviewCreatedBranch);
 
         $this->requestConverter->expects($this->once())
             ->method('convert')
-            ->willReturn($newReviewRequest);
+            ->willReturn($reviewCreatedRequest);
 
-        $newReviewAction = $this->createMock(Implementation\Action\ReviewCreated::class);
+        $reviewCreatedAction = $this->createMock(Implementation\Action\ReviewCreated::class);
         $this->actionFactory->expects($this->once())
-            ->method('createNewReview')
-            ->with($newReviewId, $newReviewBranch)
-            ->willReturn($newReviewAction);
+            ->method('createReviewCreated')
+            ->with($reviewCreatedId, $reviewCreatedBranch)
+            ->willReturn($reviewCreatedAction);
 
-        $newReviewAction->expects($this->once())
+        $reviewCreatedAction->expects($this->once())
+            ->method('process');
+
+        $this->post('/api/upsource', []);
+    }
+
+    public function testHandleWhenReviewLabelChangedAction(): void
+    {
+        $reviewLabelChangedRequest     = $this->createMock(Request\Upsource\Model\ReviewLabelChanged::class);
+        $reviewLabelChangedReviewId    = '::id::';
+        $reviewLabelChangedLabeldId    = '::label id::';
+        $reviewLabelChangedIsWasAdded  = true;
+
+        $reviewLabelChangedRequest->expects($this->once())
+            ->method('getReviewId')
+            ->willReturn($reviewLabelChangedReviewId);
+        $reviewLabelChangedRequest->expects($this->once())
+            ->method('getLabelId')
+            ->willReturn($reviewLabelChangedLabeldId);
+        $reviewLabelChangedRequest->expects($this->once())
+            ->method('isWasAdded')
+            ->willReturn($reviewLabelChangedIsWasAdded);
+
+        $this->requestConverter->expects($this->once())
+            ->method('convert')
+            ->willReturn($reviewLabelChangedRequest);
+
+        $reviewLabelChangedAction = $this->createMock(Implementation\Action\ReviewLabelChanged::class);
+        $this->actionFactory->expects($this->once())
+            ->method('createReviewLabelChanged')
+            ->with($reviewLabelChangedReviewId, $reviewLabelChangedLabeldId, $reviewLabelChangedIsWasAdded)
+            ->willReturn($reviewLabelChangedAction);
+
+        $reviewLabelChangedAction->expects($this->once())
             ->method('process');
 
         $this->post('/api/upsource', []);

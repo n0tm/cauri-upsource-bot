@@ -30,7 +30,7 @@ class ConverterTest extends TestCase
         $this->converter = new Upsource\Converter();
     }
 
-    public function testConvertWhenDataTypeIsNewReview(): void
+    public function testConvertWhenDataTypeReviewCreated(): void
     {
         $this->request->dataType     = Upsource\ConverterInterface::DATA_TYPE_REVIEW_CREATED;
         $this->request->majorVersion = $this->faker->randomDigit;
@@ -38,16 +38,36 @@ class ConverterTest extends TestCase
         $this->request->projectId    = '::project id::';
         $this->request->data         = $this->faker->randomElements();
 
-        $expectedNewReviewRequest = Upsource\Model\Factory::createReviewCreated(
+        $expectedReviewCreatedRequest = Upsource\Model\Factory::createReviewCreated(
             $this->request->majorVersion,
             $this->request->minorVersion,
             $this->request->projectId,
             $this->request->data
         );
 
-        $actualNewReviewRequest = $this->converter->convert($this->request);
+        $actualReviewCreatedRequest = $this->converter->convert($this->request);
 
-        $this->assertEquals($expectedNewReviewRequest, $actualNewReviewRequest);
+        $this->assertEquals($expectedReviewCreatedRequest, $actualReviewCreatedRequest);
+    }
+
+    public function testConvertWhenDataTypeReviewLabelChanged(): void
+    {
+        $this->request->dataType     = Upsource\ConverterInterface::DATA_TYPE_REVIEW_LABEL_CHANGED;
+        $this->request->majorVersion = $this->faker->randomDigit;
+        $this->request->minorVersion = $this->faker->randomDigit;
+        $this->request->projectId    = '::project id::';
+        $this->request->data         = $this->faker->randomElements();
+
+        $expectedReviewLabelChangedRequest = Upsource\Model\Factory::createReviewLabelChanged(
+            $this->request->majorVersion,
+            $this->request->minorVersion,
+            $this->request->projectId,
+            $this->request->data
+        );
+
+        $actualReviewLabelChangedRequest = $this->converter->convert($this->request);
+
+        $this->assertEquals($expectedReviewLabelChangedRequest, $actualReviewLabelChangedRequest);
     }
 
     public function testConvertWhenDataTypeNotExist(): void

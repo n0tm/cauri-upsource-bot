@@ -19,14 +19,14 @@ class FactoryTest extends \Tests\TestCase
         $this->factory = new Factory();
     }
 
-    public function testCreateNewReview(): void
+    public function testCreatReviewCreated(): void
     {
         $id     = '::id::';
         $branch = '::branch::';
 
-        $expectedNewReviewAction = new ReviewCreated($id, $branch);
-        $actualNewReviewAction   = $this->factory->createReviewCreated($id, $branch);
+        $expectedReviewCreatedAction = new ReviewCreated($id, $branch);
+        $actualReviewCreatedAction   = $this->factory->createReviewCreated($id, $branch);
 
-        $this->assertEquals($expectedNewReviewAction, $actualNewReviewAction);
+        $this->assertEquals($expectedReviewCreatedAction, $actualReviewCreatedAction);
     }
 }

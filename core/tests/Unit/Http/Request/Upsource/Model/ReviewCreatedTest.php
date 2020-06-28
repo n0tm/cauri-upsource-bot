@@ -5,7 +5,7 @@ namespace Tests\Unit\Http\Request\Upsource\Model;
 use App\Http\Request\Upsource\Model\AbstractRequest;
 use App\Http\Request\Upsource\Model\ReviewCreated;
 
-class NewReviewTest extends AbstractRequestTest
+class ReviewCreatedTest extends AbstractRequestTest
 {
     public function testGetBranch(): void
     {

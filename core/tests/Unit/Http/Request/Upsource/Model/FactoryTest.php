@@ -10,16 +10,16 @@ class FactoryTest extends \Tests\TestCase
 {
     use WithFaker;
 
-    public function testCreateNewReview(): void
+    public function testCreateReviewCreated(): void
     {
         $majorVersion = $this->faker->randomDigit;
         $minorVersion = $this->faker->randomDigit;
         $projectId    = '::project id::';
         $data         = [];
 
-        $expectedNewReview = new ReviewCreated($majorVersion, $minorVersion, $projectId, $data);
-        $actualNewReview   = Factory::createReviewCreated($majorVersion, $minorVersion, $projectId, $data);
+        $expectedReviewCreated = new ReviewCreated($majorVersion, $minorVersion, $projectId, $data);
+        $actualReviewCreated   = Factory::createReviewCreated($majorVersion, $minorVersion, $projectId, $data);
 
-        $this->assertEquals($expectedNewReview, $actualNewReview);
+        $this->assertEquals($expectedReviewCreated, $actualReviewCreated);
     }
 }
