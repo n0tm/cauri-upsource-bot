@@ -12,7 +12,7 @@ return array(
     'App\\Domain\\Contract\\Action\\Factory' => $baseDir . '/app/Domain/Contract/Action/Factory.php',
     'App\\Domain\\Contract\\Processor' => $baseDir . '/app/Domain/Contract/Processor.php',
     'App\\Domain\\Implementation\\Action\\Factory' => $baseDir . '/app/Domain/Implementation/Action/Factory.php',
-    'App\\Domain\\Implementation\\Action\\NewReview' => $baseDir . '/app/Domain/Implementation/Action/NewReview.php',
+    'App\\Domain\\Implementation\\Action\\ReviewCreated' => $baseDir . '/app/Domain/Implementation/Action/NewReview.php',
     'App\\Domain\\Implementation\\Processor' => $baseDir . '/app/Domain/Implementation/Processor.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',

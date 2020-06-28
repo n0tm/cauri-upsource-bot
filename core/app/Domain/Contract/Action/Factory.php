@@ -2,9 +2,9 @@
 
 namespace App\Domain\Contract\Action;
 
-use App\Domain\Implementation\Action\NewReview;
+use App\Domain\Implementation\Action\ReviewCreated;
 
 interface Factory
 {
-    public function createNewReview(string $id, string $branch): NewReview;
+    public function createNewReview(string $id, string $branch): ReviewCreated;
 }

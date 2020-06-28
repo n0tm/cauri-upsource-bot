@@ -481,7 +481,7 @@ class ComposerStaticInit8d814a4ea1723e322e3e1a8c4707278c
         'App\\Domain\\Contract\\Action\\Factory' => __DIR__ . '/../..' . '/app/Domain/Contract/Action/Factory.php',
         'App\\Domain\\Contract\\Processor' => __DIR__ . '/../..' . '/app/Domain/Contract/Processor.php',
         'App\\Domain\\Implementation\\Action\\Factory' => __DIR__ . '/../..' . '/app/Domain/Implementation/Action/Factory.php',
-        'App\\Domain\\Implementation\\Action\\NewReview' => __DIR__ . '/../..' . '/app/Domain/Implementation/Action/NewReview.php',
+        'App\\Domain\\Implementation\\Action\\ReviewCreated' => __DIR__ . '/../..' . '/app/Domain/Implementation/Action/NewReview.php',
         'App\\Domain\\Implementation\\Processor' => __DIR__ . '/../..' . '/app/Domain/Implementation/Processor.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',

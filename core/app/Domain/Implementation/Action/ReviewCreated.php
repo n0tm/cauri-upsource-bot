@@ -5,13 +5,8 @@ namespace App\Domain\Implementation\Action;
 use App\Domain\Contract;
 use Illuminate\Support\Facades\Log;
 
-class NewReview implements Contract\Action\Base
+class ReviewCreated extends AbstractReviewAction
 {
-    /**
-     * @var string
-     */
-    private $reviewId;
-
     /**
      * @var string
      */
@@ -19,8 +14,8 @@ class NewReview implements Contract\Action\Base
 
     public function __construct(string $reviewId, string $branch)
     {
-        $this->reviewId = $reviewId;
-        $this->branch   = $branch;
+        parent::__construct($reviewId);
+        $this->branch = $branch;
     }
 
     public function process(): void

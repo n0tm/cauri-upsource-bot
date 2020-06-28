@@ -3,7 +3,7 @@
 namespace Tests\Unit\Domain\Action;
 
 use App\Domain\Implementation\Action\Factory;
-use App\Domain\Implementation\Action\NewReview;
+use App\Domain\Implementation\Action\ReviewCreated;
 
 class FactoryTest extends \Tests\TestCase
 {
@@ -24,7 +24,7 @@ class FactoryTest extends \Tests\TestCase
         $id     = '::id::';
         $branch = '::branch::';
 
-        $expectedNewReviewAction = new NewReview($id, $branch);
+        $expectedNewReviewAction = new ReviewCreated($id, $branch);
         $actualNewReviewAction   = $this->factory->createNewReview($id, $branch);
 
         $this->assertEquals($expectedNewReviewAction, $actualNewReviewAction);

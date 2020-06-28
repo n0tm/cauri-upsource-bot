@@ -62,7 +62,7 @@ class UpsourceWebhookHandlerTest extends TestCase
             ->method('convert')
             ->willReturn($newReviewRequest);
 
-        $newReviewAction = $this->createMock(Implementation\Action\NewReview::class);
+        $newReviewAction = $this->createMock(Implementation\Action\ReviewCreated::class);
         $this->actionFactory->expects($this->once())
             ->method('createNewReview')
             ->with($newReviewId, $newReviewBranch)

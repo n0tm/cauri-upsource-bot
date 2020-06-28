@@ -6,8 +6,8 @@ use App\Domain\Contract;
 
 class Factory implements Contract\Action\Factory
 {
-    public function createNewReview(string $id, string $branch): NewReview
+    public function createNewReview(string $id, string $branch): ReviewCreated
     {
-        return new NewReview($id, $branch);
+        return new ReviewCreated($id, $branch);
     }
 }
