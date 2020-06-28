@@ -4,6 +4,7 @@ namespace Tests\Unit\Domain\Action;
 
 use App\Domain\Implementation\Action\Factory;
 use App\Domain\Implementation\Action\ReviewCreated;
+use App\Domain\Implementation\Action\ReviewLabelChanged;
 
 class FactoryTest extends \Tests\TestCase
 {
@@ -19,14 +20,37 @@ class FactoryTest extends \Tests\TestCase
         $this->factory = new Factory();
     }
 
-    public function testCreatReviewCreated(): void
+    public function testCreateReviewCreated(): void
     {
-        $id     = '::id::';
-        $branch = '::branch::';
+        $reviewId = '::id::';
+        $branch   = '::branch::';
 
-        $expectedReviewCreatedAction = new ReviewCreated($id, $branch);
-        $actualReviewCreatedAction   = $this->factory->createReviewCreated($id, $branch);
+        $expectedReviewCreatedAction = new ReviewCreated($reviewId, $branch);
+        $actualReviewCreatedAction   = $this->factory->createReviewCreated($reviewId, $branch);
 
         $this->assertEquals($expectedReviewCreatedAction, $actualReviewCreatedAction);
+    }
+
+    /**
+     * @param bool $isWasAdded
+     * @dataProvider createReviewLabelChangedProvider
+     */
+    public function testCreateReviewLabelChanged(bool $isWasAdded): void
+    {
+        $reviewId   = '::id::';
+        $labelId    = '::label id::';
+
+        $expectedReviewLabelChangedAction = new ReviewLabelChanged($reviewId, $labelId, $isWasAdded);
+        $actualReviewLabelChangedAction   = $this->factory->createReviewLabelChanged($reviewId, $labelId, $isWasAdded);
+
+        $this->assertEquals($expectedReviewLabelChangedAction, $actualReviewLabelChangedAction);
+    }
+
+    public function createReviewLabelChangedProvider(): array
+    {
+        return [
+            [true],
+            [false],
+        ];
     }
 }
