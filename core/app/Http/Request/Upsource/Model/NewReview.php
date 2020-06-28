@@ -2,15 +2,10 @@
 
 namespace App\Http\Request\Upsource\Model;
 
-class NewReview extends AbstractRequest
+class NewReview extends AbstractReviewRequest
 {
     public function getBranch(): string
     {
         return $this->getData()['branch'];
-    }
-
-    public function getReviewId(): string
-    {
-        return $this->getData()['base']['reviewId'];
     }
 }
