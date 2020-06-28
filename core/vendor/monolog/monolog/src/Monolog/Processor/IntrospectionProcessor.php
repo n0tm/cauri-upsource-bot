@@ -38,7 +38,7 @@ class IntrospectionProcessor implements ProcessorInterface
     ];
 
     /**
-     * @param string|int $level The minimum logging level at which this Processor will be triggered
+     * @param string|int $level The minimum logging level at which this ActionProcessor will be triggered
      */
     public function __construct($level = Logger::DEBUG, array $skipClassesPartials = [], int $skipStackFramesCount = 0)
     {
