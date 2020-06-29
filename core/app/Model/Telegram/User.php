@@ -1,19 +1,19 @@
 <?php
 
-namespace App\Model;
+namespace App\Model\Telegram;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 
 /**
- * Class TelegramUser
+ * Class User
  * @package App\Model
  *
  * @property int $id
  * @property int $user_id
  * @property int $review_chat_id
  */
-class TelegramUser extends Model
+class User extends Model
 {
     use Notifiable;
 

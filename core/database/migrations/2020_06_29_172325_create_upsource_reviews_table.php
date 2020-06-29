@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUpsourceUsersTable extends Migration
+class CreateUpsourceReviewsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateUpsourceUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('upsource_users', function (Blueprint $table) {
+        Schema::create('upsource_reviews', function (Blueprint $table) {
             $table->string('id')->primary();
-            $table->string('name');
-            $table->string('project_id');
-            $table->integer('user_id');
+            $table->string('creator_upsource_user_id');
+            $table->string('branch');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreateUpsourceUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('upsource_users');
+        Schema::dropIfExists('upsource_reviews');
     }
 }

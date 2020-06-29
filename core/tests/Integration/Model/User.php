@@ -14,11 +14,10 @@ class User extends TestCase
     {
         /** @var \App\Model\User $user */
         $user = factory(Model\User::class)->create();
-        factory(Model\TelegramUser::class)->create([
+        factory(Model\Telegram\User::class)->create([
             'user_id' => $user->id,
         ]);
 
-        $this->assertInstanceOf(Model\TelegramUser::class, $user->telegram);
-        $this->assertEquals(1, $user->telegram->count());
+        $this->assertInstanceOf(Model\Telegram\User::class, $user->telegram);
     }
 }
