@@ -2,24 +2,42 @@
 
 namespace App\Notifications;
 
+use App\Domain\Helpers;
+use App\Model\TelegramUser;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
-use NotificationChannels\Telegram\TelegramChannel;
+use NotificationChannels\Telegram;
 
 class ReviewReadyForReview extends Notification
 {
     use Queueable;
 
     /**
-     * Create a new notification instance.
-     *
-     * @return void
+     * @var string
      */
-    public function __construct()
+    private $userNameWhoSetReadyForReview;
+
+    /**
+     * @var string
+     */
+    private $projectId;
+
+    /**
+     * @var string
+     */
+    private $reviewId;
+
+    /**
+     * @var string
+     */
+    private $branch;
+
+    public function __construct(string $projectId, string $reviewId, string $branch, string $userNameWhoSetReadyForReview)
     {
-        //
+        $this->projectId                    = $projectId;
+        $this->reviewId                     = $reviewId;
+        $this->userNameWhoSetReadyForReview = $userNameWhoSetReadyForReview;
+        $this->branch                       = $branch;
     }
 
     /**
@@ -30,11 +48,19 @@ class ReviewReadyForReview extends Notification
      */
     public function via($notifiable)
     {
-        return [TelegramChannel::class];
+        return [Telegram\TelegramChannel::class];
     }
 
-    public function toTelegram($notifiable)
+    public function toTelegram(TelegramUser $notifiable)
     {
-
+        $taskId = Helpers\Upsource\Branch::getTaskId($this->branch);
+        $content = "Пользователь {$this->userNameWhoSetReadyForReview} открыл ревью для просмотра";
+        $message = Telegram\TelegramMessage::create()
+            ->to($notifiable->review_chat_id)
+            ->button('Ревью', Helpers\Upsource\LinkGenerator::getReview($this->projectId, $this->reviewId));
+        $taskId !== null
+            ? $message->button('Задача', Helpers\YouTrack\LinkGenerator::getTask($taskId))
+            : $content .= "\n\nНе удалось найти задачу привязанную к ветке";
+        return $message->content($content);
     }
 }
