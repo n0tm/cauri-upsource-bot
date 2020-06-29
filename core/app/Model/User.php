@@ -8,6 +8,13 @@ use Illuminate\Notifications\Notifiable;
 /**
  * Class User
  * @package App\Model
+ *
+ * @property int $id
+ * @property int $name
+ * @property int $surname
+ * @property int $email
+ *
+ * relations
  * @property $telegram
  */
 class User extends Authenticatable
