@@ -3,7 +3,7 @@
 namespace App\Notifications;
 
 use App\Domain\Helpers;
-use App\Model\TelegramUser;
+use App\Model;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use NotificationChannels\Telegram;
@@ -40,18 +40,12 @@ class ReviewReadyForReview extends Notification
         $this->branch                       = $branch;
     }
 
-    /**
-     * Get the notification's delivery channels.
-     *
-     * @param  mixed  $notifiable
-     * @return array
-     */
-    public function via($notifiable)
+    public function via()
     {
         return [Telegram\TelegramChannel::class];
     }
 
-    public function toTelegram(TelegramUser $notifiable)
+    public function toTelegram(Model\Telegram\User $notifiable)
     {
         $taskId = Helpers\Upsource\Branch::getTaskId($this->branch);
         $content = "Пользователь {$this->userNameWhoSetReadyForReview} открыл ревью для просмотра";

@@ -6,8 +6,9 @@ use App\Http\Controllers\Upsource\ActionProcessor;
 use App\Http\Request\Upsource\ConverterInterface;
 use App\Http\Request\Upsource\Model\RequestInterface;
 use PHPUnit\Framework\MockObject\MockObject;
+use Tests\TestCase;
 
-class WebhookHandlerTest extends \Tests\TestCase
+class WebhookHandlerTest extends TestCase
 {
     /**
      * @var ConverterInterface|MockObject
@@ -15,7 +16,7 @@ class WebhookHandlerTest extends \Tests\TestCase
     private $converter;
 
     /**
-     * @var ActionProcessor|MockObject
+     * @var ActionProcessorTest|MockObject
      */
     private $actionProcessor;
 

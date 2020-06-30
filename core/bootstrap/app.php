@@ -51,6 +51,11 @@ $app->bind(
     \App\Domain\Implementation\Action\Factory::class
 );
 
+$app->bind(
+    \App\Domain\Contract\Repository\Factory::class,
+    \App\Domain\Implementation\Repository\Factory::class
+);
+
 /*
 |--------------------------------------------------------------------------
 | Return The Application

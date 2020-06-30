@@ -13,5 +13,6 @@ class DatabaseSeeder extends Seeder
     {
          $this->call(TelegramUsers::class);
          $this->call(Users::class);
+         $this->call(UpsourceUsers::class);
     }
 }

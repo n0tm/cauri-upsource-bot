@@ -15,7 +15,7 @@ use Illuminate\Notifications\Notifiable;
  * @property int $email
  *
  * relations
- * @property $telegram
+ * @property \App\Model\Telegram\User $telegram
  */
 class User extends Authenticatable
 {
@@ -31,10 +31,10 @@ class User extends Authenticatable
     ];
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne|TelegramUser
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne|Telegram\User
      */
     public function telegram()
     {
-        return $this->hasOne(TelegramUser::class);
+        return $this->hasOne(Telegram\User::class);
     }
 }

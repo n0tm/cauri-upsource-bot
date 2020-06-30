@@ -1,12 +1,12 @@
 <?php
 
-namespace Tests\Integration\Model;
+namespace Tests\Integration\Model\Upsource;
 
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use App\Model;
 use Tests\TestCase;
 
-class UpsourceReview extends TestCase
+class Review extends TestCase
 {
     use DatabaseTransactions;
 

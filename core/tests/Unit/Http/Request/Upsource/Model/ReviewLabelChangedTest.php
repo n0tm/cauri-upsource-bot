@@ -5,7 +5,7 @@ namespace Tests\Unit\Http\Request\Upsource\Model;
 use App\Http\Request\Upsource\Model\AbstractRequest;
 use App\Http\Request\Upsource\Model\ReviewLabelChanged;
 
-class ReviewLabelChangedTest extends AbstractReviewTest
+class ReviewLabelChangedTest extends AbstractRequestTest
 {
 
     public function testGetLabelId(): void
@@ -35,6 +35,45 @@ class ReviewLabelChangedTest extends AbstractReviewTest
         );
 
         $this->assertSame($isWasAdded, $request->isWasAdded());
+    }
+
+    public function testGetActorId(): void
+    {
+        $actorId = '::actor id::';
+        $request = $this->getRequest(
+            self::TEST_MAJOR_VERSION,
+            self::TEST_MINOR_VERSION,
+            self::TEST_PROJECT_ID,
+            ['actor' => ['userId' => $actorId]]
+        );
+
+        $this->assertSame($actorId, $request->getActorId());
+    }
+
+    public function testGetActorName(): void
+    {
+        $actorName = '::actor id::';
+        $request = $this->getRequest(
+            self::TEST_MAJOR_VERSION,
+            self::TEST_MINOR_VERSION,
+            self::TEST_PROJECT_ID,
+            ['actor' => ['userName' => $actorName]]
+        );
+
+        $this->assertSame($actorName, $request->getActorName());
+    }
+
+    public function testGetReviewId(): void
+    {
+        $reviewId = '::review id::';
+        $request = $this->getRequest(
+            self::TEST_MAJOR_VERSION,
+            self::TEST_MINOR_VERSION,
+            self::TEST_PROJECT_ID,
+            ['reviewId' => $reviewId]
+        );
+
+        $this->assertSame($reviewId, $request->getReviewId());
     }
 
     public function isWasAddedProvider(): array

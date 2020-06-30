@@ -6,18 +6,20 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Review
- * @package App\Model
+ * @package App\Model\Upsource
  *
  * @property $id
  * @property $creator_upsource_user_id
  * @property $branch
  *
  * relations
- * @property $upsourceUser
+ * @property User $upsourceUser
  */
 class Review extends Model
 {
     public $incrementing = false;
+
+    protected $table = 'upsource_reviews';
 
     protected $fillable = [
         'id',

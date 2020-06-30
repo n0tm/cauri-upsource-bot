@@ -17,6 +17,10 @@ class User extends Model
 {
     use Notifiable;
 
+    public $incrementing = false;
+
+    protected $table = 'telegram_users';
+
     protected $fillable = [
         'id',
         'user_id',

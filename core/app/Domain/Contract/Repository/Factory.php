@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Domain\Contract\Action;
+namespace App\Domain\Contract\Repository;
 
 interface Factory
 {

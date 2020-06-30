@@ -2,55 +2,26 @@
 
 namespace Tests\Unit\Domain\Action;
 
-use App\Domain\Implementation\Action\Factory;
-use App\Domain\Implementation\Action\ReviewCreated;
-use App\Domain\Implementation\Action\ReviewLabelChanged;
+use App\Domain\Implementation;
+use Tests\TestCase;
 
-class FactoryTest extends \Tests\TestCase
+class FactoryTest extends TestCase
 {
     /**
-     * @var Factory
+     * @var \App\Domain\Implementation\Action\Factory
      */
     private $factory;
 
     protected function setUp(): void
     {
         parent::setUp();
-
-        $this->factory = new Factory();
+        $this->factory = new Implementation\Action\Factory();
     }
 
-    public function testCreateReviewCreated(): void
+    public function testCreateUpsource(): void
     {
-        $reviewId = '::id::';
-        $branch   = '::branch::';
-
-        $expectedReviewCreatedAction = new ReviewCreated($reviewId, $branch);
-        $actualReviewCreatedAction   = $this->factory->createReviewCreated($reviewId, $branch);
-
-        $this->assertEquals($expectedReviewCreatedAction, $actualReviewCreatedAction);
-    }
-
-    /**
-     * @param bool $isWasAdded
-     * @dataProvider createReviewLabelChangedProvider
-     */
-    public function testCreateReviewLabelChanged(bool $isWasAdded): void
-    {
-        $reviewId   = '::id::';
-        $labelId    = '::label id::';
-
-        $expectedReviewLabelChangedAction = new ReviewLabelChanged($reviewId, $labelId, $isWasAdded);
-        $actualReviewLabelChangedAction   = $this->factory->createReviewLabelChanged($reviewId, $labelId, $isWasAdded);
-
-        $this->assertEquals($expectedReviewLabelChangedAction, $actualReviewLabelChangedAction);
-    }
-
-    public function createReviewLabelChangedProvider(): array
-    {
-        return [
-            [true],
-            [false],
-        ];
+        $expectedUpsourceFactory = new Implementation\Action\Upsource\Factory();
+        $actualUpsourceFactory = $this->factory->createUpsource();
+        $this->assertEquals($expectedUpsourceFactory, $actualUpsourceFactory);
     }
 }

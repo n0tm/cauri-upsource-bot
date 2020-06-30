@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Upsource;
 
 use App\Domain\Contract;
 use App\Http\Request\Upsource;
+use Exception;
 use Illuminate\Support\Facades\Log;
 
 class ActionProcessor
@@ -11,11 +12,19 @@ class ActionProcessor
     /**
      * @var Contract\Action\Factory
      */
-    private $factory;
+    private $actionFactory;
 
-    public function __construct(Contract\Action\Factory $factory)
-    {
-        $this->factory = $factory;
+    /**
+     * @var Contract\Repository\Factory
+     */
+    private $repositoryFactory;
+
+    public function __construct(
+        Contract\Action\Factory $actionFactory,
+        Contract\Repository\Factory $repositoryFactory
+    ) {
+        $this->actionFactory     = $actionFactory;
+        $this->repositoryFactory = $repositoryFactory;
     }
 
     public function process(Upsource\Model\RequestInterface $request): void
@@ -27,8 +36,10 @@ class ActionProcessor
         Log::info("Starting processing \"{$actionType}\" action with id:{$actionId}");
         try {
             $action->process();
-        } catch (\Exception $exception) {
+        } catch (Exception $exception) {
             Log::critical("Error occurred, during \"{$actionType}\" action processing, id:{$actionId}\n[Error Message] {$exception->getMessage()}");
+        } finally {
+            Log::info("Action \"{$actionType}\" success, id:{$actionId}");
         }
     }
 
@@ -36,9 +47,21 @@ class ActionProcessor
     {
         switch (true) {
             case $request instanceof Upsource\Model\ReviewCreated:
-                return $this->factory->createReviewCreated($request->getReviewId(), $request->getBranch());
+                return $this->actionFactory->createUpsource()->createReviewCreated(
+                    $this->repositoryFactory->createUpsource(),
+                    $request->getReviewId(),
+                    $request->getActorId(),
+                    $request->getBranch()
+                );
             case $request instanceof Upsource\Model\ReviewLabelChanged:
-                return $this->factory->createReviewLabelChanged($request->getReviewId(), $request->getLabelId(), $request->isWasAdded());
+                return $this->actionFactory->createUpsource()->createReviewLabelChanged(
+                    $this->repositoryFactory->createUpsource(),
+                    $request->getReviewId(),
+                    $request->getProjectId(),
+                    $request->getActorName(),
+                    $request->getLabelId(),
+                    $request->isWasAdded()
+                );
             default:
                 throw new Exception\UnknownRequest("Unknown action for provided request");
         }

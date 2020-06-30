@@ -1,5 +1,6 @@
 <?php
 
+use App\Model\User;
 use Illuminate\Database\Seeder;
 
 class Users extends Seeder
@@ -11,8 +12,8 @@ class Users extends Seeder
      */
     public function run()
     {
-        \App\Model\User::query()->insert([
-            ['name' => 'Андрей', 'surname' => 'Кутин', 'email' => 'andrey.kutin@cauri.com']
+        User::query()->insert([
+            ['name' => 'Андрей', 'surname' => 'Кутин', 'email' => 'andrey.kutin@cauri.com', 'id' => 1]
         ]);
     }
 }
