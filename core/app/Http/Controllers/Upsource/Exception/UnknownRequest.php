@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Upsource\Exception;
 
-use Throwable;
+use Exception;
 
-class UnknownRequest extends \Exception
+class UnknownRequest extends Exception
 {
 }

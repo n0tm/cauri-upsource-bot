@@ -74,7 +74,7 @@ class ActionProcessorTest extends TestCase
         $reviewCreatedAction  = $this->createMock(Implementation\Action\Upsource\ReviewCreated::class);
         $upsourceFactory->expects($this->once())
             ->method('createReviewCreated')
-            ->with($upsourceRepository, $reviewCreatedId, $reviewCreatedBranch, $reviewCreatedActorId)
+            ->with($upsourceRepository, $reviewCreatedId, $reviewCreatedActorId, $reviewCreatedBranch)
             ->willReturn($reviewCreatedAction);
 
         $reviewCreatedAction->expects($this->once())->method('process');

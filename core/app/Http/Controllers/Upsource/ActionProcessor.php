@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Upsource;
 
 use App\Domain\Contract;
 use App\Http\Request\Upsource;
-use Exception;
 use Illuminate\Support\Facades\Log;
 
 class ActionProcessor
