@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Request\Upsource;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use App\Http\Request\Exception\UnknownRequest;
 
 class WebhookHandler extends Controller
 {
@@ -30,8 +31,15 @@ class WebhookHandler extends Controller
 
     public function handle(Request $request)
     {
+        Log::info("New Upsource Request");
         Log::info($request);
-        $convertedRequest = $this->requestConverter->convert($request);
+        try {
+            $convertedRequest = $this->requestConverter->convert($request);
+        } catch (UnknownRequest $e) {
+            Log::critical("Failed to convert upsource request\n[Error] {$e->getMessage()}");
+            return;
+        }
+
         $this->actionProcessor->process($convertedRequest);
     }
 }

@@ -48,7 +48,7 @@ class ReviewReadyForReview extends Notification
     public function toTelegram(Model\Telegram\User $notifiable)
     {
         $taskId = Helpers\Upsource\Branch::getTaskId($this->branch);
-        $content = "Пользователь {$this->userNameWhoSetReadyForReview} открыл ревью для просмотра";
+        $content = "Пользователь открыл ревью для просмотра\n*Автор:* {$this->userNameWhoSetReadyForReview}\n*Ветка:* {$this->branch}";
         $message = Telegram\TelegramMessage::create()
             ->to($notifiable->review_chat_id)
             ->button('Ревью', Helpers\Upsource\LinkGenerator::getReview($this->projectId, $this->reviewId));

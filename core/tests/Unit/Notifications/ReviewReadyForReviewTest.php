@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Notification;
 use App\Notifications;
 use Tests\TestCase;
 
-class ReviewReadyForReview extends TestCase
+class ReviewReadyForReviewTest extends TestCase
 {
     public function testNotificationWhenBranchIncorrect(): void
     {
@@ -30,9 +30,9 @@ class ReviewReadyForReview extends TestCase
         Notification::assertNotSentTo(
             $telegramUser,
             Notifications\ReviewReadyForReview::class,
-            function (Notifications\ReviewReadyForReview $notification) use ($telegramUser, $userNameWhoSetReadyForReview) {
+            function (Notifications\ReviewReadyForReview $notification) use ($telegramUser, $userNameWhoSetReadyForReview, $branch) {
                 $message = $notification->toTelegram($telegramUser)->toArray();
-                $this->assertSame($message['text'], "Пользователь {$userNameWhoSetReadyForReview} открыл ревью для просмотра\n\nНе удалось найти задачу привязанную к ветке");
+                $this->assertSame($message['text'], "Пользователь открыл ревью для просмотра\n*Автор:* {$userNameWhoSetReadyForReview}\n*Ветка:* {$branch}\n\nНе удалось найти задачу привязанную к ветке");
                 $this->assertSame($message['chat_id'], $telegramUser->review_chat_id);
                 $this->assertSame($message['reply_markup'], '{"inline_keyboard":[[{"text":"\u0420\u0435\u0432\u044c\u044e","url":"https:\/\/upsource.qubb.su\/::project id::\/review\/::review id::"}]]}');
             }
@@ -61,9 +61,9 @@ class ReviewReadyForReview extends TestCase
         Notification::assertNotSentTo(
             $telegramUser,
             Notifications\ReviewReadyForReview::class,
-            function (Notifications\ReviewReadyForReview $notification) use ($telegramUser, $userNameWhoSetReadyForReview) {
+            function (Notifications\ReviewReadyForReview $notification) use ($telegramUser, $userNameWhoSetReadyForReview, $branch) {
                 $message = $notification->toTelegram($telegramUser)->toArray();
-                $this->assertSame($message['text'], "Пользователь {$userNameWhoSetReadyForReview} открыл ревью для просмотра");
+                $this->assertSame($message['text'], "Пользователь открыл ревью для просмотра\n*Автор:* {$userNameWhoSetReadyForReview}\n*Ветка:* {$branch}");
                 $this->assertSame($message['chat_id'], $telegramUser->review_chat_id);
                 $this->assertSame($message['reply_markup'], '{"inline_keyboard":[[{"text":"\u0420\u0435\u0432\u044c\u044e","url":"https:\/\/upsource.qubb.su\/::project id::\/review\/::review id::"},{"text":"\u0417\u0430\u0434\u0430\u0447\u0430","url":"https:\/\/youtrack.qubb.su\/issue\/CC-525"}]]}');
             }
