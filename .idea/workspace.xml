@@ -1,0 +1,645 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="BuildServerSettings">
+    <option name="LOGIN" value="" />
+    <option name="SERVER_URL" value="" />
+    <option name="COMMIT_PATTERN" value="{message}" />
+    <option name="REMEMBER_ME" value="true" />
+    <option name="USE_IDEA_PROXY_SETTINGS" value="true" />
+    <option name="INSPECTIONS_BUILD_TYPE_IDS" />
+    <option name="DUPLICATES_BUILD_TYPE_IDS" />
+    <option name="ENABLE_SUITABLE_CONFIGURATION_CACHING" value="true" />
+    <option name="COVERAGE_SETTINGS" />
+    <option name="TEST_STATUS_ENABLED" value="true" />
+    <option name="TEST_STATUS_SHOW_SUCCESSFUL" value="false" />
+    <option name="POSTPONE_SUITABLE_CONFIGURATIONS_SEARCH" value="false" />
+    <option name="ARTIFACTS_BUILD_TYPE_IDS" />
+    <option name="PERFORM_COMMIT_IF_SUCCESSFUL" value="true" />
+    <option name="PERFORM_COMMIT_IF_NO_NEW_FAILED_TESTS" value="false" />
+    <option name="REQUEST_CONFIRMATON" value="false" />
+    <option name="PRE_TESTED_COMMIT" value="true" />
+    <option name="FILTER_BY_STATUS" value="false" />
+    <option name="FILTER_MARKED_AS_FIXED" value="false" />
+    <option name="TOOL_WINDOW_SELECTED_CONTENT_INDEX" value="0" />
+    <treeState key="project">
+      <selectedPath>
+        <pathElement>
+          <option name="myNodeId" value="helperText" />
+          <option name="myNodeType" value="jetbrains.buildServer.tree.descriptors.LinkedTextDescriptor" />
+        </pathElement>
+      </selectedPath>
+    </treeState>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e9e9d955-e869-46e7-b78e-07a42b1aee61" name="Default Changelist" comment="добавил .env.example">
+      <change beforePath="$PROJECT_DIR$/core/database/seeds/TelegramUsers.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/database/seeds/TelegramUsers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/database/seeds/UpsourceUsers.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/database/seeds/UpsourceUsers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/database/seeds/Users.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/database/seeds/Users.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true">
+    <pharConfigPath>$PROJECT_DIR$/core/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="DockerExecCommand">
+    <ExecCommand>
+      <option name="command" value="/bin/bash" />
+      <option name="imageId" value="sha256:15323c3df9ecfdb9675b3533dbe144fdc4dca12fa018883900c07ddcf45889ac" />
+    </ExecCommand>
+    <ExecCommand>
+      <option name="command" value="/bin/bash" />
+      <option name="imageId" value="sha256:9501638bfaf49739b428572958a973bdc9aea82bd36c942ca6baca1327df647c" />
+    </ExecCommand>
+    <ExecCommand>
+      <option name="command" value="/bin/bash" />
+      <option name="imageId" value="sha256:0fadaaf910a4a8cc0a52d676bba8d792d423122af870252bd80b482f3c9d1e20" />
+    </ExecCommand>
+    <ExecCommand>
+      <option name="command" value="/bin/bash" />
+      <option name="imageId" value="sha256:f466957d0dffb123d789004d9a62536a8e0f7619ccbb3471b27d55b5d5405c2b" />
+    </ExecCommand>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpDebugGeneral" xdebug_debug_port="9009" />
+  <component name="PhpServers">
+    <servers>
+      <server host="localhost" id="d8f970c0-28fd-41a2-94df-254bf9301687" name="Xdebug" use_path_mappings="true">
+        <path_mappings>
+          <mapping local-root="$PROJECT_DIR$" remote-root="/var/www" />
+        </path_mappings>
+      </server>
+    </servers>
+  </component>
+  <component name="PhpWebServerValidation" path_to_validation_script="$PROJECT_DIR$/core/public" selected_validation_type="LOCAL" web_path_to_validation_script="http://localhost" />
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="app">
+    <include_path>
+      <path value="$PROJECT_DIR$/core/vendor/laravel-notification-channels/telegram" />
+      <path value="$PROJECT_DIR$/core/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/core/vendor/irazasyed/telegram-bot-sdk" />
+      <path value="$PROJECT_DIR$/core/vendor/phpdocumentor/reflection-common" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="1drNKPHDs6eG4ojAGnDUxVLudz6" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Constants" value="false" />
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/core/.env&#10;/Users/n0tm/projects/php/cauri-upsource-bot/core/storage/logs/laravel.log" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.language" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/core/database/factories/Upsource" />
+      <recent name="$PROJECT_DIR$/core/database/factories/Telegram" />
+      <recent name="$PROJECT_DIR$/core/tests/Integration/Model/Upsource" />
+      <recent name="$PROJECT_DIR$/core/tests/Unit/Domain/Action/Upsource" />
+      <recent name="$PROJECT_DIR$/core/app/Domain/Contract/Action/Upsource" />
+    </key>
+  </component>
+  <component name="RunManager" selected="PHPUnit.tests">
+    <configuration name="Action" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner configuration_file="core/phpunit.xml" directory="$PROJECT_DIR$/core/tests/Unit/Domain/Action" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Domain" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner configuration_file="core/phpunit.xml" directory="$PROJECT_DIR$/core/tests/Unit/Domain" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ReviewReadyForReviewTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Unit\Notifications\ReviewReadyForReviewTest" configuration_file="core/phpunit.xml" file="$PROJECT_DIR$/core/tests/Unit/Notifications/ReviewReadyForReviewTest.php" scope="Class" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ReviewReadyForReviewTest.testNotificationWhenBranchIncorrect" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Unit\Notifications\ReviewReadyForReviewTest" configuration_file="core/phpunit.xml" file="$PROJECT_DIR$/core/tests/Unit/Notifications/ReviewReadyForReviewTest.php" method="testNotificationWhenBranchIncorrect" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="tests" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner configuration_file="core/phpunit.xml" directory="$PROJECT_DIR$/core/tests" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHPUnit.tests" />
+        <item itemvalue="PHPUnit.ReviewReadyForReviewTest.testNotificationWhenBranchIncorrect" />
+        <item itemvalue="PHPUnit.ReviewReadyForReviewTest" />
+        <item itemvalue="PHPUnit.Domain" />
+        <item itemvalue="PHPUnit.Action" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e9e9d955-e869-46e7-b78e-07a42b1aee61" name="Default Changelist" comment="" />
+      <created>1593179188228</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1593179188228</updated>
+      <workItem from="1593179192836" duration="68236000" />
+      <workItem from="1593426725512" duration="33920000" />
+      <workItem from="1593511496869" duration="3035000" />
+      <workItem from="1593681281005" duration="981000" />
+      <workItem from="1594215449952" duration="1205000" />
+      <workItem from="1596040827233" duration="2528000" />
+      <workItem from="1596103088521" duration="408000" />
+      <workItem from="1596113419609" duration="598000" />
+      <workItem from="1596193774054" duration="581000" />
+      <workItem from="1596469514112" duration="963000" />
+      <workItem from="1596713403133" duration="353000" />
+      <workItem from="1597248767218" duration="4795000" />
+      <workItem from="1597765036015" duration="363000" />
+      <workItem from="1599341258268" duration="655000" />
+      <workItem from="1600700806502" duration="1647000" />
+    </task>
+    <task id="LOCAL-00001" summary="Created application">
+      <created>1593190751349</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1593190751349</updated>
+    </task>
+    <task id="LOCAL-00002" summary="added new revision to review">
+      <created>1593197992423</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1593197992423</updated>
+    </task>
+    <task id="LOCAL-00003" summary="added another new revision to review">
+      <created>1593198064904</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1593198064904</updated>
+    </task>
+    <task id="LOCAL-00004" summary="added last one new revision to review">
+      <created>1593198275839</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1593198275839</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Created Upsource Controller">
+      <created>1593200104112</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1593200104112</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Подготовил каркас для обработки вебхуков от апсурса.">
+      <created>1593214601225</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1593214601225</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Изменена структура проекта, добавлены тесты">
+      <created>1593264982358</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1593264982358</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Изменена структура проекта, добавлены тесты на конкретер запросов от апсурса">
+      <created>1593271588902</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1593271588902</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Добавлен тест на тип запроса &quot;Новое ревью&quot;, сделать абстрактный класс для тестирования запросов">
+      <created>1593272710435</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1593272710435</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Removed processor.php">
+      <created>1593278465277</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1593278465277</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Изменена структура Action'ов. Удалён айдишник и тип из его объектов, теперь он генерируется в контроллере. Сделан тест на фабрику экшенов">
+      <created>1593279862840</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1593279862841</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Добавил переход в директорию ядра">
+      <created>1593280217160</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1593280217160</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Поправил запуск экшенов, добавил в паттер запуск фич">
+      <created>1593280518871</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1593280518871</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Изменил перемещение в директорию ядра">
+      <created>1593280829062</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1593280829063</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Добавил .env.example">
+      <created>1593281037265</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1593281037265</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Добавил конвертацию запросов события &quot;Изменён лейбл к ревью&quot;">
+      <created>1593346286976</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1593346286977</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Переименовал запрос NewReview в ReviewCreated. Добавлены метод reviewLabelChanged в фабрику запросов и конвертер">
+      <created>1593346729982</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1593346729982</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Добавил абстрактный экшн для ревью. Сделал экшн для изменения лейбла в ревью">
+      <created>1593348068642</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1593348068642</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Добавил роутинг к экшенам при изменении лейбла ревью">
+      <created>1593348565538</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1593348565539</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Переименованы все вхождения названия NewReview -&gt; ReviewCreated, Добавлены тест ына вебхук и конвертер">
+      <created>1593349768158</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1593349768158</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Добавил абстрактный тест на запросы ревью, добавил тест на запрос ReviewLabelChanged">
+      <created>1593350539074</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1593350539074</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Добавил тест на фабрику экшенов">
+      <created>1593350935801</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1593350935801</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Добавил ActionProcessor, изменил логику контроллера, вынес часть логики из контроллера в actionProcessor">
+      <created>1593359496519</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1593359496520</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Удалил вендор, добавил .gitignore, установил телеграм sdk">
+      <created>1593362783236</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1593362783236</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Добавил модели для телеграм пользователей, добавил нотификацию для ревью, добавил фабрику для телеграм пользователей, переместил модели в пакет моделей">
+      <created>1593437745956</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1593437745956</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Поправил фабрики для тестов пользователей и телеграм пользователей. Добавил тесты на телеграм и обычных пользователей">
+      <created>1593439906653</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1593439906653</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Добавил миграцию, модель и сиды для пользователей апсорса">
+      <created>1593442237837</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1593442237837</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Добавлены конфиги для апсурса и ютрека&#10;Добавлены хелперы, дописана логика нотиифкации ReadyForReview">
+      <created>1593450965188</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1593450965188</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Добавил тест на релейшены пользователя апсорса через ревью апсорса, переименовал группу апсорс моделей.">
+      <created>1593460420474</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1593460420474</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Добавлен главный функционал по отправке нотификций и сохранению ревью">
+      <created>1593479629479</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1593479629480</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Добавил обработку ошибки конвертации в вебхук хендлре, переименовал тест на нотификацию и поменял формат сообщения в нотификации">
+      <created>1593605113475</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1593605113475</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Пофиксил падающий тест с неймспейсом и передаваемыми параметрами">
+      <created>1593605444777</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1593605444777</updated>
+    </task>
+    <task id="LOCAL-00033" summary="добавил корректные данные сотрудников">
+      <created>1597258895409</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1597258895410</updated>
+    </task>
+    <task id="LOCAL-00034" summary="добавил .env.example">
+      <created>1597311887435</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1597311887435</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/app" />
+      <path value="$PROJECT_DIR$/cauri-upsource-bot.git" />
+      <path value="$PROJECT_DIR$/core" />
+      <path value="$PROJECT_DIR$/laravel-app" />
+      <path value="$PROJECT_DIR$/laravel-in-docker" />
+    </ignored-roots>
+    <MESSAGE value="Изменена структура Action'ов. Удалён айдишник и тип из его объектов, теперь он генерируется в контроллере. Сделан тест на фабрику экшенов" />
+    <MESSAGE value="Добавил переход в директорию ядра" />
+    <MESSAGE value="Поправил запуск экшенов, добавил в паттер запуск фич" />
+    <MESSAGE value="Изменил перемещение в директорию ядра" />
+    <MESSAGE value="Добавил .env.example" />
+    <MESSAGE value="Добавил конвертацию запросов события &quot;Изменён лейбл к ревью&quot;" />
+    <MESSAGE value="Переименовал запрос NewReview в ReviewCreated. Добавлены метод reviewLabelChanged в фабрику запросов и конвертер" />
+    <MESSAGE value="Добавил абстрактный экшн для ревью. Сделал экшн для изменения лейбла в ревью" />
+    <MESSAGE value="Добавил роутинг к экшенам при изменении лейбла ревью" />
+    <MESSAGE value="Переименованы все вхождения названия NewReview -&gt; ReviewCreated, Добавлены тест ына вебхук и конвертер" />
+    <MESSAGE value="Добавил абстрактный тест на запросы ревью, добавил тест на запрос ReviewLabelChanged" />
+    <MESSAGE value="Добавил тест на фабрику экшенов" />
+    <MESSAGE value="Добавил ActionProcessor, изменил логику контроллера, вынес часть логики из контроллера в actionProcessor" />
+    <MESSAGE value="Удалил вендор, добавил .gitignore, установил телеграм sdk" />
+    <MESSAGE value="Добавил модели для телеграм пользователей, добавил нотификацию для ревью, добавил фабрику для телеграм пользователей, переместил модели в пакет моделей" />
+    <MESSAGE value="Поправил фабрики для тестов пользователей и телеграм пользователей. Добавил тесты на телеграм и обычных пользователей" />
+    <MESSAGE value="Добавил миграцию, модель и сиды для пользователей апсорса" />
+    <MESSAGE value="Добавлены конфиги для апсурса и ютрека&#10;Добавлены хелперы, дописана логика нотиифкации ReadyForReview" />
+    <MESSAGE value="Добавил тест на релейшены пользователя апсорса через ревью апсорса, переименовал группу апсорс моделей." />
+    <MESSAGE value="Добавлен главный функционал по отправке нотификций и сохранению ревью" />
+    <MESSAGE value="Добавил обработку ошибки конвертации в вебхук хендлре, переименовал тест на нотификацию и поменял формат сообщения в нотификации" />
+    <MESSAGE value="Пофиксил падающий тест с неймспейсом и передаваемыми параметрами" />
+    <MESSAGE value="добавил корректные данные сотрудников" />
+    <MESSAGE value="добавил .env.example" />
+    <MESSAGE value="added new users to seeds" />
+    <option name="LAST_COMMIT_MESSAGE" value="added new users to seeds" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="307" y="112" key="#CLI_Interpreters" timestamp="1593185078387">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="307" y="112" key="#CLI_Interpreters/0.0.1440.900@0.0.1440.900" timestamp="1593185078387" />
+    <state x="516" y="209" key="#Docker" timestamp="1593184938974">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="516" y="209" key="#Docker/0.0.1440.900@0.0.1440.900" timestamp="1593184938974" />
+    <state x="320" y="115" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593367857879">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="320" y="115" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1593367857879" />
+    <state x="100" y="100" width="1240" height="700" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1593605421062">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="100" y="100" width="1240" height="700" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1440.900@0.0.1440.900" timestamp="1593605421062" />
+    <state x="158" y="84" width="1240" height="700" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.23.1440.804@0.23.1440.804" timestamp="1593472534226" />
+    <state x="438" y="250" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1593184585290">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="438" y="250" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1593184585290" />
+    <state x="516" y="130" key="#com.intellij.ide.util.MemberChooser" timestamp="1593464633924">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="516" y="130" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1593464633924" />
+    <state x="568" y="285" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1593463377214">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="568" y="285" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1440.900@0.0.1440.900" timestamp="1593463377214" />
+    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1593517736490">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1440.900@0.0.1440.900" timestamp="1593517736490" />
+    <state x="458" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1593452158956">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="458" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.900@0.0.1440.900" timestamp="1593452158956" />
+    <state x="393" y="209" width="681" height="594" key="#com.jetbrains.php.debug.validation.PhpWebServerValidationDialog#" timestamp="1593260207126">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="393" y="209" width="681" height="594" key="#com.jetbrains.php.debug.validation.PhpWebServerValidationDialog#/0.0.1440.900@0.0.1440.900" timestamp="1593260207126" />
+    <state x="100" y="100" width="1240" height="700" key="DiffContextDialog" timestamp="1600703266482">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="100" y="100" width="1240" height="700" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1593605421063" />
+    <state x="100" y="100" width="1240" height="700" key="DiffContextDialog/0.23.1440.798@0.23.1440.798" timestamp="1593266795722" />
+    <state x="100" y="100" width="1240" height="700" key="DiffContextDialog/0.23.1440.804@0.23.1440.804" timestamp="1593472991356" />
+    <state x="100" y="100" width="1240" height="700" key="DiffContextDialog/0.23.1440.877@0.23.1440.877" timestamp="1600703266482" />
+    <state x="0" y="0" key="FileDocumentManager.FileCacheConflict" timestamp="1593198353382">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="0" y="0" key="FileDocumentManager.FileCacheConflict/0.0.1440.900@0.0.1440.900" timestamp="1593198353382" />
+    <state width="1398" height="232" key="GridCell.Tab.0.bottom" timestamp="1593620806064">
+      <screen x="0" y="23" width="1440" height="801" />
+    </state>
+    <state width="1398" height="232" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1593605362677" />
+    <state width="1398" height="232" key="GridCell.Tab.0.bottom/0.23.1440.801@0.23.1440.801" timestamp="1593620806064" />
+    <state width="1398" height="232" key="GridCell.Tab.0.bottom/0.23.1440.804@0.23.1440.804" timestamp="1593511186101" />
+    <state width="1398" height="232" key="GridCell.Tab.0.center" timestamp="1593620806063">
+      <screen x="0" y="23" width="1440" height="801" />
+    </state>
+    <state width="1398" height="232" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1593605362676" />
+    <state width="1398" height="232" key="GridCell.Tab.0.center/0.23.1440.801@0.23.1440.801" timestamp="1593620806063" />
+    <state width="1398" height="232" key="GridCell.Tab.0.center/0.23.1440.804@0.23.1440.804" timestamp="1593511186100" />
+    <state width="1398" height="232" key="GridCell.Tab.0.left" timestamp="1593620806063">
+      <screen x="0" y="23" width="1440" height="801" />
+    </state>
+    <state width="1398" height="232" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1593605362675" />
+    <state width="1398" height="232" key="GridCell.Tab.0.left/0.23.1440.801@0.23.1440.801" timestamp="1593620806063" />
+    <state width="1398" height="232" key="GridCell.Tab.0.left/0.23.1440.804@0.23.1440.804" timestamp="1593511186100" />
+    <state width="1398" height="232" key="GridCell.Tab.0.right" timestamp="1593620806063">
+      <screen x="0" y="23" width="1440" height="801" />
+    </state>
+    <state width="1398" height="232" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1593605362676" />
+    <state width="1398" height="232" key="GridCell.Tab.0.right/0.23.1440.801@0.23.1440.801" timestamp="1593620806063" />
+    <state width="1398" height="232" key="GridCell.Tab.0.right/0.23.1440.804@0.23.1440.804" timestamp="1593511186101" />
+    <state width="1398" height="293" key="GridCell.Tab.1.bottom" timestamp="1593620805874">
+      <screen x="0" y="23" width="1440" height="801" />
+    </state>
+    <state width="1398" height="293" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1593604418275" />
+    <state width="1398" height="293" key="GridCell.Tab.1.bottom/0.23.1440.801@0.23.1440.801" timestamp="1593620805874" />
+    <state width="1398" height="293" key="GridCell.Tab.1.bottom/0.23.1440.804@0.23.1440.804" timestamp="1593511186090" />
+    <state width="1398" height="293" key="GridCell.Tab.1.center" timestamp="1593620805873">
+      <screen x="0" y="23" width="1440" height="801" />
+    </state>
+    <state width="1398" height="293" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1593604418274" />
+    <state width="1398" height="293" key="GridCell.Tab.1.center/0.23.1440.801@0.23.1440.801" timestamp="1593620805873" />
+    <state width="1398" height="293" key="GridCell.Tab.1.center/0.23.1440.804@0.23.1440.804" timestamp="1593511186089" />
+    <state width="1398" height="293" key="GridCell.Tab.1.left" timestamp="1593620805872">
+      <screen x="0" y="23" width="1440" height="801" />
+    </state>
+    <state width="1398" height="293" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1593604418273" />
+    <state width="1398" height="293" key="GridCell.Tab.1.left/0.23.1440.801@0.23.1440.801" timestamp="1593620805872" />
+    <state width="1398" height="293" key="GridCell.Tab.1.left/0.23.1440.804@0.23.1440.804" timestamp="1593511186089" />
+    <state width="1398" height="293" key="GridCell.Tab.1.right" timestamp="1593620805873">
+      <screen x="0" y="23" width="1440" height="801" />
+    </state>
+    <state width="1398" height="293" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1593604418274" />
+    <state width="1398" height="293" key="GridCell.Tab.1.right/0.23.1440.801@0.23.1440.801" timestamp="1593620805873" />
+    <state width="1398" height="293" key="GridCell.Tab.1.right/0.23.1440.804@0.23.1440.804" timestamp="1593511186090" />
+    <state width="241" height="539" key="HiddenNamespacesPopup" timestamp="1593437027448">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="241" height="539" key="HiddenNamespacesPopup/0.0.1440.900@0.0.1440.900" timestamp="1593437027448" />
+    <state x="488" y="151" key="NewPhpClassDialog" timestamp="1593475125809">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="488" y="151" key="NewPhpClassDialog/0.0.1440.900@0.0.1440.900" timestamp="1593475125809" />
+    <state x="539" y="376" key="NewPhpFileDialog" timestamp="1593447285737">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="539" y="376" key="NewPhpFileDialog/0.0.1440.900@0.0.1440.900" timestamp="1593447285737" />
+    <state x="277" y="107" key="SettingsEditor" timestamp="1593425129636">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="277" y="107" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1593425129636" />
+    <state width="500" height="445" key="SwitcherDM" timestamp="1593348204413">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="500" height="445" key="SwitcherDM/0.0.1440.900@0.0.1440.900" timestamp="1593348204412" />
+    <state x="320" y="186" key="Vcs.Push.Dialog.v2" timestamp="1597311888738">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="320" y="186" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1597311888738" />
+    <state x="422" y="189" width="596" height="554" key="find.popup" timestamp="1593604520443">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="422" y="189" width="596" height="554" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1593604520443" />
+    <state x="385" y="210" key="run.anything.popup" timestamp="1593213372635">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="385" y="210" key="run.anything.popup/0.0.1440.900@0.0.1440.900" timestamp="1593213372635" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1597258825222">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1597258825222" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/core/app/Exceptions/Handler.php</url>
+          <line>57</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/core/tests/Integration/Model/User.php</url>
+          <line>15</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
