@@ -50,9 +50,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e9e9d955-e869-46e7-b78e-07a42b1aee61" name="Default Changelist" comment="добавил .env.example">
-      <change beforePath="$PROJECT_DIR$/core/database/seeds/TelegramUsers.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/database/seeds/TelegramUsers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/database/seeds/UpsourceUsers.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/database/seeds/UpsourceUsers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/database/seeds/Users.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/database/seeds/Users.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +82,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="merge-branch" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -121,6 +119,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/core/.env&#10;/Users/n0tm/projects/php/cauri-upsource-bot/core/storage/logs/laravel.log" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -196,6 +195,7 @@
       <workItem from="1597765036015" duration="363000" />
       <workItem from="1599341258268" duration="655000" />
       <workItem from="1600700806502" duration="1647000" />
+      <workItem from="1608889465348" duration="853000" />
     </task>
     <task id="LOCAL-00001" summary="Created application">
       <created>1593190751349</created>
@@ -435,7 +435,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597311887435</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="merge branches">
+      <created>1608889667711</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1608889667711</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -461,7 +468,6 @@
       <path value="$PROJECT_DIR$/laravel-app" />
       <path value="$PROJECT_DIR$/laravel-in-docker" />
     </ignored-roots>
-    <MESSAGE value="Изменена структура Action'ов. Удалён айдишник и тип из его объектов, теперь он генерируется в контроллере. Сделан тест на фабрику экшенов" />
     <MESSAGE value="Добавил переход в директорию ядра" />
     <MESSAGE value="Поправил запуск экшенов, добавил в паттер запуск фич" />
     <MESSAGE value="Изменил перемещение в директорию ядра" />
@@ -486,145 +492,19 @@
     <MESSAGE value="добавил корректные данные сотрудников" />
     <MESSAGE value="добавил .env.example" />
     <MESSAGE value="added new users to seeds" />
-    <option name="LAST_COMMIT_MESSAGE" value="added new users to seeds" />
+    <MESSAGE value="merge branches" />
+    <option name="LAST_COMMIT_MESSAGE" value="merge branches" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="307" y="112" key="#CLI_Interpreters" timestamp="1593185078387">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="100" y="79" width="1240" height="719" key="DiffContextDialog" timestamp="1608889854430">
+      <screen x="0" y="25" width="1440" height="794" />
     </state>
-    <state x="307" y="112" key="#CLI_Interpreters/0.0.1440.900@0.0.1440.900" timestamp="1593185078387" />
-    <state x="516" y="209" key="#Docker" timestamp="1593184938974">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="516" y="209" key="#Docker/0.0.1440.900@0.0.1440.900" timestamp="1593184938974" />
-    <state x="320" y="115" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593367857879">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="320" y="115" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1593367857879" />
-    <state x="100" y="100" width="1240" height="700" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1593605421062">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="100" y="100" width="1240" height="700" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1440.900@0.0.1440.900" timestamp="1593605421062" />
-    <state x="158" y="84" width="1240" height="700" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.23.1440.804@0.23.1440.804" timestamp="1593472534226" />
-    <state x="438" y="250" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1593184585290">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="438" y="250" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1593184585290" />
-    <state x="516" y="130" key="#com.intellij.ide.util.MemberChooser" timestamp="1593464633924">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="516" y="130" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1593464633924" />
-    <state x="568" y="285" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1593463377214">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="568" y="285" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1440.900@0.0.1440.900" timestamp="1593463377214" />
-    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1593517736490">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1440.900@0.0.1440.900" timestamp="1593517736490" />
-    <state x="458" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1593452158956">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="458" y="212" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.900@0.0.1440.900" timestamp="1593452158956" />
-    <state x="393" y="209" width="681" height="594" key="#com.jetbrains.php.debug.validation.PhpWebServerValidationDialog#" timestamp="1593260207126">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="393" y="209" width="681" height="594" key="#com.jetbrains.php.debug.validation.PhpWebServerValidationDialog#/0.0.1440.900@0.0.1440.900" timestamp="1593260207126" />
-    <state x="100" y="100" width="1240" height="700" key="DiffContextDialog" timestamp="1600703266482">
-      <screen x="0" y="23" width="1440" height="877" />
-    </state>
-    <state x="100" y="100" width="1240" height="700" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1593605421063" />
-    <state x="100" y="100" width="1240" height="700" key="DiffContextDialog/0.23.1440.798@0.23.1440.798" timestamp="1593266795722" />
-    <state x="100" y="100" width="1240" height="700" key="DiffContextDialog/0.23.1440.804@0.23.1440.804" timestamp="1593472991356" />
     <state x="100" y="100" width="1240" height="700" key="DiffContextDialog/0.23.1440.877@0.23.1440.877" timestamp="1600703266482" />
-    <state x="0" y="0" key="FileDocumentManager.FileCacheConflict" timestamp="1593198353382">
+    <state x="100" y="79" width="1240" height="719" key="DiffContextDialog/0.25.1440.794@0.25.1440.794" timestamp="1608889854430" />
+    <state x="320" y="183" width="787" height="534" key="Vcs.Push.Dialog.v2" timestamp="1608889850939">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="0" y="0" key="FileDocumentManager.FileCacheConflict/0.0.1440.900@0.0.1440.900" timestamp="1593198353382" />
-    <state width="1398" height="232" key="GridCell.Tab.0.bottom" timestamp="1593620806064">
-      <screen x="0" y="23" width="1440" height="801" />
-    </state>
-    <state width="1398" height="232" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1593605362677" />
-    <state width="1398" height="232" key="GridCell.Tab.0.bottom/0.23.1440.801@0.23.1440.801" timestamp="1593620806064" />
-    <state width="1398" height="232" key="GridCell.Tab.0.bottom/0.23.1440.804@0.23.1440.804" timestamp="1593511186101" />
-    <state width="1398" height="232" key="GridCell.Tab.0.center" timestamp="1593620806063">
-      <screen x="0" y="23" width="1440" height="801" />
-    </state>
-    <state width="1398" height="232" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1593605362676" />
-    <state width="1398" height="232" key="GridCell.Tab.0.center/0.23.1440.801@0.23.1440.801" timestamp="1593620806063" />
-    <state width="1398" height="232" key="GridCell.Tab.0.center/0.23.1440.804@0.23.1440.804" timestamp="1593511186100" />
-    <state width="1398" height="232" key="GridCell.Tab.0.left" timestamp="1593620806063">
-      <screen x="0" y="23" width="1440" height="801" />
-    </state>
-    <state width="1398" height="232" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1593605362675" />
-    <state width="1398" height="232" key="GridCell.Tab.0.left/0.23.1440.801@0.23.1440.801" timestamp="1593620806063" />
-    <state width="1398" height="232" key="GridCell.Tab.0.left/0.23.1440.804@0.23.1440.804" timestamp="1593511186100" />
-    <state width="1398" height="232" key="GridCell.Tab.0.right" timestamp="1593620806063">
-      <screen x="0" y="23" width="1440" height="801" />
-    </state>
-    <state width="1398" height="232" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1593605362676" />
-    <state width="1398" height="232" key="GridCell.Tab.0.right/0.23.1440.801@0.23.1440.801" timestamp="1593620806063" />
-    <state width="1398" height="232" key="GridCell.Tab.0.right/0.23.1440.804@0.23.1440.804" timestamp="1593511186101" />
-    <state width="1398" height="293" key="GridCell.Tab.1.bottom" timestamp="1593620805874">
-      <screen x="0" y="23" width="1440" height="801" />
-    </state>
-    <state width="1398" height="293" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1593604418275" />
-    <state width="1398" height="293" key="GridCell.Tab.1.bottom/0.23.1440.801@0.23.1440.801" timestamp="1593620805874" />
-    <state width="1398" height="293" key="GridCell.Tab.1.bottom/0.23.1440.804@0.23.1440.804" timestamp="1593511186090" />
-    <state width="1398" height="293" key="GridCell.Tab.1.center" timestamp="1593620805873">
-      <screen x="0" y="23" width="1440" height="801" />
-    </state>
-    <state width="1398" height="293" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1593604418274" />
-    <state width="1398" height="293" key="GridCell.Tab.1.center/0.23.1440.801@0.23.1440.801" timestamp="1593620805873" />
-    <state width="1398" height="293" key="GridCell.Tab.1.center/0.23.1440.804@0.23.1440.804" timestamp="1593511186089" />
-    <state width="1398" height="293" key="GridCell.Tab.1.left" timestamp="1593620805872">
-      <screen x="0" y="23" width="1440" height="801" />
-    </state>
-    <state width="1398" height="293" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1593604418273" />
-    <state width="1398" height="293" key="GridCell.Tab.1.left/0.23.1440.801@0.23.1440.801" timestamp="1593620805872" />
-    <state width="1398" height="293" key="GridCell.Tab.1.left/0.23.1440.804@0.23.1440.804" timestamp="1593511186089" />
-    <state width="1398" height="293" key="GridCell.Tab.1.right" timestamp="1593620805873">
-      <screen x="0" y="23" width="1440" height="801" />
-    </state>
-    <state width="1398" height="293" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1593604418274" />
-    <state width="1398" height="293" key="GridCell.Tab.1.right/0.23.1440.801@0.23.1440.801" timestamp="1593620805873" />
-    <state width="1398" height="293" key="GridCell.Tab.1.right/0.23.1440.804@0.23.1440.804" timestamp="1593511186090" />
-    <state width="241" height="539" key="HiddenNamespacesPopup" timestamp="1593437027448">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state width="241" height="539" key="HiddenNamespacesPopup/0.0.1440.900@0.0.1440.900" timestamp="1593437027448" />
-    <state x="488" y="151" key="NewPhpClassDialog" timestamp="1593475125809">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="488" y="151" key="NewPhpClassDialog/0.0.1440.900@0.0.1440.900" timestamp="1593475125809" />
-    <state x="539" y="376" key="NewPhpFileDialog" timestamp="1593447285737">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="539" y="376" key="NewPhpFileDialog/0.0.1440.900@0.0.1440.900" timestamp="1593447285737" />
-    <state x="277" y="107" key="SettingsEditor" timestamp="1593425129636">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="277" y="107" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1593425129636" />
-    <state width="500" height="445" key="SwitcherDM" timestamp="1593348204413">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state width="500" height="445" key="SwitcherDM/0.0.1440.900@0.0.1440.900" timestamp="1593348204412" />
-    <state x="320" y="186" key="Vcs.Push.Dialog.v2" timestamp="1597311888738">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="320" y="186" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1597311888738" />
-    <state x="422" y="189" width="596" height="554" key="find.popup" timestamp="1593604520443">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="422" y="189" width="596" height="554" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1593604520443" />
-    <state x="385" y="210" key="run.anything.popup" timestamp="1593213372635">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="385" y="210" key="run.anything.popup/0.0.1440.900@0.0.1440.900" timestamp="1593213372635" />
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1597258825222">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1597258825222" />
+    <state x="320" y="183" width="787" height="534" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1608889850939" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

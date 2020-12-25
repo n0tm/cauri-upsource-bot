@@ -3,6 +3,7 @@
 namespace App\Model\Upsource;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Domain\Contract;
 
 /**
  * Class User
@@ -14,9 +15,9 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $user_id
  *
  * relations
- * @property \App\Model\User $user
+ * @property Contract\Record\User $user
  */
-class User extends Model
+class User extends Model implements Contract\Record\Upsource\User
 {
     public $incrementing = false;
 
@@ -30,10 +31,43 @@ class User extends Model
     ];
 
     /**
-     * @return \App\Model\User
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo|Contract\Record\User
      */
     public function user()
     {
         return $this->belongsTo(\App\Model\User::class);
     }
+
+	/**
+	 * @return \App\Domain\Implementation\Entity\Upsource\User
+	 */
+	public function getEntity(): Contract\Entity\Basic
+	{
+		return new \App\Domain\Implementation\Entity\Upsource\User($this);
+	}
+
+	public function getId(): string
+	{
+		return $this->id;
+	}
+
+	public function getName(): string
+	{
+		return $this->name;
+	}
+
+	public function getProjectId(): string
+	{
+		return $this->project_id;
+	}
+
+	public function getUserId(): int
+	{
+		return $this->user_id;
+	}
+
+	public function getUser(): Contract\Record\User
+	{
+		return $this->user;
+	}
 }

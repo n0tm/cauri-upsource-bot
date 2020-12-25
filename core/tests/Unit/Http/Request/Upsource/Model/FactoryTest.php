@@ -2,26 +2,37 @@
 
 namespace Tests\Unit\Http\Request\Upsource\Model;
 
-use App\Http\Request\Upsource\Model\Factory;
-use App\Http\Request\Upsource\Model\ReviewCreated;
-use App\Http\Request\Upsource\Model\ReviewLabelChanged;
+use App\Http\Request\Upsource\Model;
 use Illuminate\Foundation\Testing\WithFaker;
+use Tests\TestCase;
 
-class FactoryTest extends \Tests\TestCase
+class FactoryTest extends TestCase
 {
     use WithFaker;
 
-    public function testCreateReviewCreated(): void
+	/**
+	 * @var Model\Factory
+	 */
+    private $factory;
+
+    protected function setUp(): void
+    {
+	    parent::setUp();
+
+	    $this->factory = new Model\Factory();
+    }
+
+	public function testCreateReviewCreated(): void
     {
         $majorVersion = $this->faker->randomDigit;
         $minorVersion = $this->faker->randomDigit;
         $projectId    = '::project id::';
         $data         = [];
 
-        $expectedReviewCreated = new ReviewCreated($majorVersion, $minorVersion, $projectId, $data);
-        $actualReviewCreated   = Factory::createReviewCreated($majorVersion, $minorVersion, $projectId, $data);
+        $expectedReviewCreated = new Model\ReviewCreated($majorVersion, $minorVersion, $projectId, $data);
+        $actualReviewCreated   = $this->factory->createReviewCreated($majorVersion, $minorVersion, $projectId, $data);
 
-        $this->assertEquals($expectedReviewCreated, $actualReviewCreated);
+        self::assertEquals($expectedReviewCreated, $actualReviewCreated);
     }
 
     public function testCreateReviewLabelChanged(): void
@@ -31,9 +42,35 @@ class FactoryTest extends \Tests\TestCase
         $projectId    = '::project id::';
         $data         = [];
 
-        $expectedReviewLabelChanged = new ReviewLabelChanged($majorVersion, $minorVersion, $projectId, $data);
-        $actualReviewLabelChanged   = Factory::createReviewLabelChanged($majorVersion, $minorVersion, $projectId, $data);
+        $expectedReviewLabelChanged = new Model\ReviewLabelChanged($majorVersion, $minorVersion, $projectId, $data);
+        $actualReviewLabelChanged   = $this->factory->createReviewLabelChanged($majorVersion, $minorVersion, $projectId, $data);
 
-        $this->assertEquals($expectedReviewLabelChanged, $actualReviewLabelChanged);
+        self::assertEquals($expectedReviewLabelChanged, $actualReviewLabelChanged);
     }
+
+	public function testCreateReviewClosedOrReopened(): void
+	{
+		$majorVersion = $this->faker->randomDigit;
+		$minorVersion = $this->faker->randomDigit;
+		$projectId    = '::project id::';
+		$data         = [];
+
+		$expectedReviewLabelChanged = new Model\ReviewClosedOrReopened($majorVersion, $minorVersion, $projectId, $data);
+		$actualReviewLabelChanged   = $this->factory->createReviewClosedOrReopened($majorVersion, $minorVersion, $projectId, $data);
+
+		self::assertEquals($expectedReviewLabelChanged, $actualReviewLabelChanged);
+	}
+
+	public function testCreateDiscussionNew(): void
+	{
+		$majorVersion = $this->faker->randomDigit;
+		$minorVersion = $this->faker->randomDigit;
+		$projectId    = '::project id::';
+		$data         = [];
+
+		$expectedDiscussionNew = new Model\DiscussionNew($majorVersion, $minorVersion, $projectId, $data);
+		$actualDiscussionNew   = $this->factory->createDiscussionNew($majorVersion, $minorVersion, $projectId, $data);
+
+		self::assertEquals($expectedDiscussionNew, $actualDiscussionNew);
+	}
 }

@@ -41,19 +41,60 @@ $app->singleton(
     App\Exceptions\Handler::class
 );
 
+
+$app->bind(
+	\App\Domain\Contract\System\Facade::class,
+	\App\System\Config\Facade::class
+);
+
 $app->bind(
     \App\Http\Request\Upsource\ConverterInterface::class,
     \App\Http\Request\Upsource\Converter::class
 );
 
 $app->bind(
-    \App\Domain\Contract\Action\Factory::class,
-    \App\Domain\Implementation\Action\Factory::class
+	\App\Domain\Contract\Action\ContextFactory::class,
+	\App\Domain\Implementation\Action\ContextFactory::class
 );
 
 $app->bind(
-    \App\Domain\Contract\Repository\Factory::class,
-    \App\Domain\Implementation\Repository\Factory::class
+	\App\Domain\Contract\Repository\Upsource\Review::class,
+	\App\Repository\Upsource\Review::class
+);
+
+$app->bind(
+	\App\Domain\Contract\Repository\Telegram\ReviewNotificationMessage::class,
+	\App\Repository\Telegram\ReviewNotificationMessage::class
+);
+
+$app->bind(
+	\App\Domain\Contract\Notifications\Context\Review::class,
+	\App\Notifications\Context\Review::class
+);
+
+$app->bind(
+	\App\Domain\Contract\Api\Upsource\Client::class,
+	\App\Api\Upsource\Client::class
+);
+
+$app->bind(
+	\App\Domain\Contract\Api\Upsource\Request\Factory::class,
+	\App\Api\Upsource\Request\Factory::class
+);
+
+$app->bind(
+	\App\Domain\Contract\Api\Upsource\Response\Factory::class,
+	\App\Api\Upsource\Response\Factory::class
+);
+
+$app->bind(
+	\App\Domain\Contract\Action\Telegram\ContextFactory::class,
+	\App\Domain\Implementation\Action\Telegram\ContextFactory::class
+);
+
+$app->bind(
+	App\Domain\Contract\Api\Upsource\Facade::class,
+	App\Api\Upsource\Facade::class
 );
 
 /*

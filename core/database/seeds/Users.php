@@ -21,7 +21,8 @@ class Users extends Seeder
 	        ['name' => 'Валерий', 'surname' => 'Тотубалин', 'email' => 'valeriy.totubalin@cauri.com', 'id' => 6],
 	        ['name' => 'Владислав', 'surname' => 'Кармишкин', 'email' => 'vladislav.karmishkin@cauri.com', 'id' => 7],
 	        ['name' => 'Зафар', 'surname' => 'Ризаметов', 'email' => 'zafar.rizametov@cauri.com', 'id' => 8],
-
+	        ['name' => 'Никита', 'surname' => 'Ракчеев', 'email' => 'nikita.rakcheev@cauri.com', 'id' => 9],
+	        ['name' => 'Станислава', 'surname' => 'Солнышкина', 'email' => 'stanislava.solnyshkina@cauri.com', 'id' => 10],
         ]);
     }
 }

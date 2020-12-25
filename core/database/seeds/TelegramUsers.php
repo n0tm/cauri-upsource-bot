@@ -24,6 +24,8 @@ class TelegramUsers extends Seeder
 	        ['id' => 950293168, 'user_id' => 6, 'review_chat_id' => self::REVIEW_CHAT_ID_CHIP], // Валерий Тотубалин
 	        ['id' => 410207249, 'user_id' => 7, 'review_chat_id' => self::REVIEW_CHAT_ID_QUANTUM], // Влад Кармишкин
 	        ['id' => 167603171, 'user_id' => 8, 'review_chat_id' => self::REVIEW_CHAT_ID_QUANTUM], // Зафар Риаметов
+	        ['id' => 491011602, 'user_id' => 9, 'review_chat_id' => self::REVIEW_CHAT_ID_QUANTUM], // Никита Ракчеев
+	        ['id' => 473941483, 'user_id' => 10, 'review_chat_id' => self::REVIEW_CHAT_ID_QUANTUM], // Станислава Солнышкина
         ]);
     }
 }

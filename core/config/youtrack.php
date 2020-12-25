@@ -1,5 +1,7 @@
 <?php
 
 return [
-    'domain' => 'https://youtrack.qubb.su',
+	'url' => [
+		'site' => 'https://youtrack.qubb.su'
+	],
 ];

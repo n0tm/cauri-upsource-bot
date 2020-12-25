@@ -2,10 +2,10 @@
 
 namespace App\Domain\Contract\Repository\Upsource;
 
-use App\Model;
+use App\Domain\Contract;
 
 interface Review
 {
     public function create(string $id, string $creatorId, string $branch): bool;
-    public function getById(string $id): Model\Upsource\Review;
+    public function getById(string $id): ?Contract\Entity\Upsource\Review;
 }

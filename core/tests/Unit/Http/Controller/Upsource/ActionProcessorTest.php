@@ -6,131 +6,144 @@ use App\Domain\Contract;
 use App\Domain\Implementation;
 use App\Http\Controllers\Upsource;
 use App\Http\Request;
+use Illuminate\Foundation\Testing\WithFaker;
 use PHPUnit\Framework\MockObject\MockObject;
 use Tests\TestCase;
 
 class ActionProcessorTest extends TestCase
 {
+	use WithFaker;
+
     /**
      * @var Upsource\ActionProcessor|MockObject
      */
     private $actionProcessor;
 
-    /**
-     * @var Contract\Action\Factory|MockObject
-     */
-    private $actionFactory;
-
-    /**
-     * @var Contract\Repository\Factory|MockObject
-     */
-    private $repositoryFactory;
+	/**
+	 * @var Contract\Action\ContextFactory|MockObject
+	 */
+    private $contextFactory;
 
     protected function setUp(): void
     {
         parent::setUp();
 
-        $this->actionFactory     = $this->createMock(Contract\Action\Factory::class);
-        $this->repositoryFactory = $this->createMock(Contract\Repository\Factory::class);
-        $this->actionProcessor   = new Upsource\ActionProcessor($this->actionFactory, $this->repositoryFactory);
+        $this->contextFactory    = $this->createMock(Contract\Action\ContextFactory::class);
+        $this->actionProcessor   = new Upsource\ActionProcessor($this->contextFactory);
     }
 
-    public function testHandleWhenUnknownAction(): void
-    {
-        $notExistingRequest = $this->createMock(Request\Upsource\Model\RequestInterface::class);
-
-        $this->expectException(Upsource\Exception\UnknownRequest::class);
-        $this->expectExceptionMessage('Unknown action for provided request');
-
-        $this->actionProcessor->process($notExistingRequest);
-    }
-
-    public function testHandleWhenReviewCreatedAction(): void
+    public function testHandleWhenRequestReviewCreated(): void
     {
         $reviewCreatedRequest  = $this->createMock(Request\Upsource\Model\ReviewCreated::class);
-        $reviewCreatedId       = '::id::';
-        $reviewCreatedBranch   = '::branch::';
-        $reviewCreatedActorId  = '::actor id::';
+        $reviewCreatedId       = $this->faker->text;
+        $reviewCreatedBranch   = $this->faker->text;
+        $reviewCreatedActorId  = $this->faker->text;
 
         $reviewCreatedRequest->expects($this->once())
             ->method('getReviewId')
             ->willReturn($reviewCreatedId);
         $reviewCreatedRequest->expects($this->once())
-            ->method('getBranch')
-            ->willReturn($reviewCreatedBranch);
-        $reviewCreatedRequest->expects($this->once())
             ->method('getActorId')
             ->willReturn($reviewCreatedActorId);
+	    $reviewCreatedRequest->expects($this->once())
+		    ->method('getBranch')
+		    ->willReturn($reviewCreatedBranch);
 
-        $upsourceFactory = $this->createMock(Contract\Action\Upsource\Factory::class);
-        $this->actionFactory->expects($this->once())
-            ->method('createUpsource')
-            ->willReturn($upsourceFactory);
+        $upsourceContextFactory = $this->createMock(Contract\Action\Upsource\ContextFactory::class);
+        $this->contextFactory->expects($this->once())
+	        ->method('createUpsource')
+	        ->willReturn($upsourceContextFactory);
+        $reviewCreatedContext = $this->createMock(Contract\Action\Upsource\Review\Context\Created::class);
+        $upsourceContextFactory->expects($this->once())
+	        ->method('createReviewCreated')
+	        ->with($reviewCreatedId, $reviewCreatedActorId, $reviewCreatedBranch)
+	        ->willReturn($reviewCreatedContext);
 
-        $upsourceRepository = $this->createMock(Implementation\Repository\Upsource\Factory::class);
-        $this->repositoryFactory->expects($this->once())
-            ->method('createUpsource')
-            ->willReturn($upsourceRepository);
-        $reviewCreatedAction  = $this->createMock(Implementation\Action\Upsource\ReviewCreated::class);
-        $upsourceFactory->expects($this->once())
-            ->method('createReviewCreated')
-            ->with($upsourceRepository, $reviewCreatedId, $reviewCreatedActorId, $reviewCreatedBranch)
-            ->willReturn($reviewCreatedAction);
+        $action = $this->createMock(Implementation\Action\Upsource\Review\Created::class);
+	    $action->expects($this->once())->method('process')->with($reviewCreatedContext);
 
-        $reviewCreatedAction->expects($this->once())->method('process');
+	    $this->app->instance(Implementation\Action\Upsource\Review\Created::class, $action);
 
         $this->actionProcessor->process($reviewCreatedRequest);
     }
 
-    public function testHandleWhenReviewLabelChangedAction(): void
-    {
-        $reviewLabelChangedRequest     = $this->createMock(Request\Upsource\Model\ReviewLabelChanged::class);
-        $reviewLabelChangedReviewId    = '::id::';
-        $reviewLabelChangedProjectId   = '::project id::';
-        $reviewLabelChangedActorName   = '::actor name::';
-        $reviewLabelChangedLabeldId    = '::label id::';
-        $reviewLabelChangedIsWasAdded  = true;
+	public function testHandleWhenRequestReviewClosedOrReopenedAndReviewClosed(): void
+	{
+		$reviewClosedOrReopenedRequest  = $this->createMock(Request\Upsource\Model\ReviewClosedOrReopened::class);
+		$reviewClosedOrReopenedId       = $this->faker->text;
 
-        $reviewLabelChangedRequest->expects($this->once())
-            ->method('getReviewId')
-            ->willReturn($reviewLabelChangedReviewId);
-        $reviewLabelChangedRequest->expects($this->once())
-            ->method('getProjectId')
-            ->willReturn($reviewLabelChangedProjectId);
-        $reviewLabelChangedRequest->expects($this->once())
-            ->method('getActorName')
-            ->willReturn($reviewLabelChangedActorName);
-        $reviewLabelChangedRequest->expects($this->once())
-            ->method('getLabelId')
-            ->willReturn($reviewLabelChangedLabeldId);
-        $reviewLabelChangedRequest->expects($this->once())
-            ->method('isWasAdded')
-            ->willReturn($reviewLabelChangedIsWasAdded);
+		$reviewClosedOrReopenedRequest->expects($this->once())
+			->method('getReviewId')
+			->willReturn($reviewClosedOrReopenedId);
+		$reviewClosedOrReopenedRequest->expects($this->once())
+			->method('isClosed')
+			->willReturn(true);
 
-        $upsourceFactory = $this->createMock(Contract\Action\Upsource\Factory::class);
-        $this->actionFactory->expects($this->once())
-            ->method('createUpsource')
-            ->willReturn($upsourceFactory);
+		$upsourceContextFactory = $this->createMock(Contract\Action\Upsource\ContextFactory::class);
+		$this->contextFactory->expects($this->once())
+			->method('createUpsource')
+			->willReturn($upsourceContextFactory);
+		$reviewClosedOrReopenedContext = $this->createMock(Contract\Action\Upsource\Review\Context\Basic::class);
+		$upsourceContextFactory->expects($this->once())
+			->method('createBasic')
+			->with($reviewClosedOrReopenedId)
+			->willReturn($reviewClosedOrReopenedContext);
 
-        $upsourceRepository = $this->createMock(Implementation\Repository\Upsource\Factory::class);
-        $this->repositoryFactory->expects($this->once())
-            ->method('createUpsource')
-            ->willReturn($upsourceRepository);
-        $reviewCreatedAction  = $this->createMock(Implementation\Action\Upsource\ReviewLabelChanged::class);
-        $upsourceFactory->expects($this->once())
-            ->method('createReviewLabelChanged')
-            ->with(
-                $upsourceRepository,
-                $reviewLabelChangedReviewId,
-                $reviewLabelChangedProjectId,
-                $reviewLabelChangedActorName,
-                $reviewLabelChangedLabeldId,
-                $reviewLabelChangedIsWasAdded
-            )
-            ->willReturn($reviewCreatedAction);
+		$action = $this->createMock(Implementation\Action\Upsource\Review\Closed::class);
+		$action->expects($this->once())->method('process')->with($reviewClosedOrReopenedContext);
 
-        $reviewCreatedAction->expects($this->once())->method('process');
+		$this->app->instance(Implementation\Action\Upsource\Review\Closed::class, $action);
 
-        $this->actionProcessor->process($reviewLabelChangedRequest);
-    }
+		$this->actionProcessor->process($reviewClosedOrReopenedRequest);
+	}
+
+	public function testHandleWhenRequestReviewClosedOrReopenedButReviewReopened(): void
+	{
+		$reviewClosedOrReopenedRequest  = $this->createMock(Request\Upsource\Model\ReviewClosedOrReopened::class);
+		$reviewClosedOrReopenedRequest->expects($this->once())
+			->method('isClosed')
+			->willReturn(false);
+
+		$this->expectException(Upsource\Exception\UnknownRequest::class);
+		$this->expectExceptionMessage('Unknown action for provided request');
+
+		$this->actionProcessor->process($reviewClosedOrReopenedRequest);
+	}
+
+	public function testHandleWhenDiscussionNewRequest(): void
+	{
+		$discussionNewRequest     = $this->createMock(Request\Upsource\Model\DiscussionNew::class);
+		$discussionNewReviewId    = $this->faker->text;
+
+		$discussionNewRequest->expects($this->once())
+			->method('getReviewId')
+			->willReturn($discussionNewReviewId);
+
+		$telegramContextFactory = $this->createMock(Contract\Action\Telegram\ContextFactory::class);
+		$this->contextFactory->expects($this->once())
+			->method('createTelegram')
+			->willReturn($telegramContextFactory);
+		$deleteReviewersNotificationsAboutAllDoneDiscussionsContext = $this->createMock(Contract\Action\Telegram\Context\DeleteReviewersNotificationsAboutAllDoneDiscussions::class);
+		$telegramContextFactory->expects($this->once())
+			->method('createDeleteReviewersNotificationsAboutAllDoneDiscussions')
+			->with($discussionNewReviewId)
+			->willReturn($deleteReviewersNotificationsAboutAllDoneDiscussionsContext);
+
+		$action = $this->createMock(Implementation\Action\Telegram\DeleteReviewersNotificationsAboutAllDoneDiscussions::class);
+		$action->expects($this->once())->method('process')->with($deleteReviewersNotificationsAboutAllDoneDiscussionsContext);
+
+		$this->app->instance(Implementation\Action\Telegram\DeleteReviewersNotificationsAboutAllDoneDiscussions::class, $action);
+
+		$this->actionProcessor->process($discussionNewRequest);
+	}
+
+	public function testHandleWhenUnknownRequest(): void
+	{
+		$notExistingRequest = $this->createMock(Request\Upsource\Model\RequestInterface::class);
+
+		$this->expectException(Upsource\Exception\UnknownRequest::class);
+		$this->expectExceptionMessage('Unknown action for provided request');
+
+		$this->actionProcessor->process($notExistingRequest);
+	}
 }
