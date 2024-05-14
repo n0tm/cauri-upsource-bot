@@ -1,0 +1,107 @@
+openapi: 3.0.0
+info:
+  title: Authentication API
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080
+tags:
+  - name: auth
+  - name: user
+  - name: OTP
+paths:
+  /user:
+    post:
+      tags:
+        - user
+      summary: Создаёт нового пользователя
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Credentials'
+      responses:
+        200:
+          description: Пользователь успешно создан
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Token'
+        400:
+          description: Bad Request
+    get:
+      tags:
+        - user
+      summary: Получить информацию о текущем пользователе
+      responses:
+        200:
+          description: Пользователь успешно создан
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Token'
+        400:
+          description: Bad Request
+
+  /otp/{phone}:
+    post:
+      summary: Запросить One Time Password на номер телефона
+      tags:
+        - OTP
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: phone
+          in: path
+          required: true
+          schema:
+            type: string
+            example: +78881234567
+      responses:
+        200:
+          description: OTP generated successfully
+        401:
+          description: Unauthorized
+  /otp/{code}/confirm:
+    post:
+      summary: Подтверждение одноразового кода
+      tags:
+        - OTP
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: code
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Одноразовый пароль успешно подтверждён
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Token'
+        401:
+          description: Unauthorized
+components:
+  schemas:
+    Credentials:
+      type: object
+      properties:
+        phone:
+          type: string
+        datebirth:
+          type: string
+    PhoneCredentials:
+      type: object
+      properties:
+        phone:
+          type: string
+          example: "+78881234567"
+    Token:
+      type: object
+      properties:
+        access_token:
+          type: string
+        refresh_token:
+          type: string
